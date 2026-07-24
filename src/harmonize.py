@@ -8,6 +8,7 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parent.parent
 RAW = ROOT / "data" / "raw"
+PROC = ROOT / "data" / "processed"
 
 
 def parse_num(x):
@@ -42,10 +43,36 @@ def grain_percentiles():
     return out
 
 
-if __name__ == "__main__":
-    gp = grain_percentiles()
-    print("samples:", len(gp))
-    for k in list(gp)[:5]:
-        print(k, gp[k])
+def build_stage_a():
+    """Cohesion rows joined with average grain size for that mission."""
+    df = pd.read_csv(RAW / "gasteiner" / "Dataset_All.csv", sep=";")
+    df["cohesion_kpa"] = df["Cohesion (kPa)"].map(parse_num)
+    df["bulk_density"] = df["Bulk density (g/cm^3)"].map(parse_num)
+    df = df.dropna(subset=["cohesion_kpa"])
 
-# TODO: join grain size onto the cohesion rows and build the stage A table
+    # grain size is per sample, cohesion is per mission, so average per mission
+    per_mission = {}
+    for (mission, _sample), vals in grain_percentiles().items():
+        per_mission.setdefault(mission, []).append(vals)
+    per_mission = {m: np.mean(v, axis=0) for m, v in per_mission.items()}
+
+    rows = []
+    for _, r in df.iterrows():
+        d = per_mission.get(r["Mission / Simulant"])
+        rows.append({
+            "mission": r["Mission / Simulant"],
+            "cohesion_kpa": r["cohesion_kpa"],
+            "bulk_density": r["bulk_density"],
+            "d10": d[0] if d is not None else np.nan,
+            "d50": d[1] if d is not None else np.nan,
+            "d90": d[2] if d is not None else np.nan,
+        })
+    out = pd.DataFrame(rows)
+    PROC.mkdir(parents=True, exist_ok=True)
+    out.to_csv(PROC / "stage_a.csv", index=False)
+    return out
+
+
+if __name__ == "__main__":
+    t = build_stage_a()
+    print("rows:", len(t), "| with grain size:", int(t["d50"].notna().sum()))
