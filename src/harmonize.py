@@ -33,7 +33,10 @@ def grain_percentiles():
         g["w"] = g["weight %"].map(parse_num).fillna(0)
         g = g.sort_values("size")  # need smallest size first or the percentiles flip
         sizes = g["size"].to_numpy(dtype=float)
-        passing = np.cumsum(g["w"].to_numpy(dtype=float))
+        w = g["w"].to_numpy(dtype=float)
+        if w.sum() <= 0:
+            continue
+        passing = np.cumsum(w) / w.sum() * 100  # not every sample adds up to 100
         d10, d50, d90 = (float(np.interp(p, passing, sizes)) for p in (10, 50, 90))
         out[(mission, sample)] = (d10, d50, d90)
     return out
