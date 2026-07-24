@@ -4,3 +4,21 @@ Figuring out which lunar and asteroid regolith simulants would stress plants the
 most, using data that is already public instead of running greenhouse trials.
 
 Still early, mostly setting up and collecting data right now.
+
+## the idea
+
+Space crops have to grow in regolith, which is rough soil: high pH, low nutrients,
+and it compacts and forms a crust that dries roots out. There are a lot of
+simulants and testing each one in a greenhouse takes weeks. I want to rank them
+from measurements that already exist so you know which ones are worth testing.
+
+## data
+
+Pulling from a few public sources (see data/raw/PROVENANCE.md for the links).
+Nothing here is my own experiment, it is all reused public data.
+
+## layout
+
+- src/ code
+- data/ raw downloads (gitignored) and processed tables
+- outputs/ figures and results (gitignored)
