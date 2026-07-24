@@ -4,5 +4,6 @@ __pycache__/
 venv/
 data/raw/*
 !data/raw/PROVENANCE.md
+data/processed/*.csv
 outputs/
 .DS_Store
