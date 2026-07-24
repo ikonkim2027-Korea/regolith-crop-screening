@@ -28,9 +28,12 @@ def grain_percentiles():
     psd = pd.read_csv(RAW / "gasteiner" / "Dataset_Samples_PSD.csv", sep=";")
     out = {}
     for (mission, sample), g in psd.groupby(["Mission", "Sample"]):
-        sizes = g["Sieve size (µm)"].map(parse_num).to_numpy(dtype=float)
-        w = g["weight %"].map(parse_num).fillna(0).to_numpy(dtype=float)
-        passing = np.cumsum(w)
+        g = g.copy()
+        g["size"] = g["Sieve size (µm)"].map(parse_num)
+        g["w"] = g["weight %"].map(parse_num).fillna(0)
+        g = g.sort_values("size")  # need smallest size first or the percentiles flip
+        sizes = g["size"].to_numpy(dtype=float)
+        passing = np.cumsum(g["w"].to_numpy(dtype=float))
         d10, d50, d90 = (float(np.interp(p, passing, sizes)) for p in (10, 50, 90))
         out[(mission, sample)] = (d10, d50, d90)
     return out
