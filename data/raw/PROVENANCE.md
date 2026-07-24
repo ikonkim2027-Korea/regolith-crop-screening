@@ -10,3 +10,6 @@ keeping track of where everything comes from so i do not lose it.
 
 apollo 15 penetrometer numbers: the data.nasa.gov page looks empty, might already
 be inside the Gasteiner database, need to check.
+
+licenses vary. the AHED mineralogy is CC BY-NC-ND (non-commercial, no
+derivatives), so check before using it in anything I share.
