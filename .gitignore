@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+data/raw/*
+!data/raw/PROVENANCE.md
+outputs/
+.DS_Store
