@@ -20,6 +20,9 @@ if __name__ == "__main__":
     X = df[FEATS].to_numpy(float)
     y = df["cohesion_kpa"].to_numpy(float)
 
+    # cohesion is really skewed (0 to ~95 kPa) so fit in log space
+    ylog = np.log1p(y)
     rf = RandomForestRegressor(n_estimators=300, random_state=42)
-    pred = cross_val_predict(rf, X, y, cv=KFold(5, shuffle=True, random_state=42))
-    print("R2:", round(r2_score(y, pred), 3))
+    pred = cross_val_predict(rf, X, ylog, cv=KFold(5, shuffle=True, random_state=42))
+    print("R2 (log):", round(r2_score(ylog, pred), 3))
+    print("R2 (kPa):", round(r2_score(y, np.expm1(pred)), 3))
