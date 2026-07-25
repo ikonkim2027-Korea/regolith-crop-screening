@@ -29,3 +29,8 @@ if __name__ == "__main__":
     pred = cross_val_predict(rf, X, ylog, groups=groups, cv=GroupKFold(5))
     print("R2 (log):", round(r2_score(ylog, pred), 3))
     print("R2 (kPa):", round(r2_score(y, np.expm1(pred)), 3))
+
+    # sanity check: does cohesion even track density? (barely, it turns out)
+    from scipy.stats import spearmanr
+    rho, p = spearmanr(df["bulk_density"], y)
+    print("cohesion vs density spearman:", round(rho, 3), "p", round(p, 3))
