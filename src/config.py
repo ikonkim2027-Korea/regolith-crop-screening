@@ -7,8 +7,8 @@ OUT = ROOT / "outputs"
 
 SEED = 42
 
-# features I want to try for predicting cohesion (might change later)
-GRAIN_FEATURES = ["d10", "d50", "d90", "sorting", "bulk_density"]
+# features for the cohesion model (never ended up computing sorting)
+GRAIN_FEATURES = ["d10", "d50", "d90", "bulk_density"]
 TARGET = "cohesion_kpa"
 
 for d in (RAW, PROC, OUT):
