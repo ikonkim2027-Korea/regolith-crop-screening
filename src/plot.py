@@ -9,6 +9,8 @@ r = pd.read_csv(PROC / "ranking.csv")
 plt.figure(figsize=(6, 8))
 plt.barh(r["Simulant"], r["risk"])
 plt.xlabel("crusting risk (0 = friendliest)")
+plt.gca().invert_yaxis()  # friendliest on top reads better
+plt.title("simulant crusting risk from measured cohesion")
 plt.tight_layout()
 
 (ROOT / "outputs").mkdir(exist_ok=True)
