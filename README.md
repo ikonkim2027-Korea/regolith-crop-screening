@@ -22,3 +22,11 @@ Nothing here is my own experiment, it is all reused public data.
 - src/ code
 - data/ raw downloads (gitignored) and processed tables
 - outputs/ figures and results (gitignored)
+
+## running
+
+```
+python src/harmonize.py   # build the stage A table
+python src/rank.py         # rank the simulants, writes data/processed/ranking.csv
+python src/plot.py         # bar chart of the ranking
+```
