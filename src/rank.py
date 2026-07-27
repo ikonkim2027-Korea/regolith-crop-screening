@@ -15,3 +15,6 @@ out = sim[["Simulant", "cohesion", "risk"]]
 PROC.mkdir(parents=True, exist_ok=True)
 out.to_csv(PROC / "ranking.csv", index=False)
 print(out.to_string(index=False))
+
+print("\nfriendliest:", ", ".join(out["Simulant"].head(3)))
+print("riskiest:  ", ", ".join(out["Simulant"].tail(3)))
