@@ -10,4 +10,8 @@ m["deficit"] = 1 - m["radish_biomass_mg"] / control
 
 fit = linregress(m["pH"], m["deficit"])
 print("deficit = %.3f*pH + %.3f" % (fit.slope, fit.intercept))
-print("R2:", round(fit.rvalue ** 2, 3))
+print("R2 vs pH: ", round(fit.rvalue ** 2, 3))
+
+# CEC drops as you add regolith too, so check which one fits better
+fit_cec = linregress(m["CEC"], m["deficit"])
+print("R2 vs CEC:", round(fit_cec.rvalue ** 2, 3))
