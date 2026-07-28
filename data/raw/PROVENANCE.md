@@ -13,3 +13,8 @@ be inside the Gasteiner database, need to check.
 
 licenses vary. the AHED mineralogy is CC BY-NC-ND (non-commercial, no
 derivatives), so check before using it in anything I share.
+
+osd670_mixtures.csv: the pH and CEC per mixture come from the OSD-670 soil
+analysis. the radish biomass numbers I read off Figure 3 of the Russell paper by
+eye, so they are approximate. only the 100:0 (95 mg) and 25:75 (16 mg) points are
+given as text, the middle two I estimated from the bars.
