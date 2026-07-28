@@ -15,3 +15,7 @@ print("R2 vs pH: ", round(fit.rvalue ** 2, 3))
 # CEC drops as you add regolith too, so check which one fits better
 fit_cec = linregress(m["CEC"], m["deficit"])
 print("R2 vs CEC:", round(fit_cec.rvalue ** 2, 3))
+
+# it is only 4 points so this is more of a calibration than a real model,
+# do not oversell the R2
+print("n =", len(m))
