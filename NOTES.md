@@ -7,23 +7,19 @@
   backwards, fixed by sorting the sieve sizes first)
 - built a first stage A table: cohesion + bulk density + grain size
 - tried predicting cohesion with a random forest, and it does not work
-- switched to just using the measured cohesion for the simulants and ranking them
-  by it (crusting risk), capped the top outlier, saved it, made a bar chart
+- ranked the simulants by measured cohesion (crusting risk), capped the outlier
+- added the osd-670 mixture chemistry and radish biomass (digitized from the
+  paper). radish stress lines up with pH almost perfectly (deficit = 0.351*pH -
+  1.675, R2 0.975), but it is only 4 points so I am not reading too much into it
 
 ## the model does not work
 - once I group by mission the R2 goes negative, worse than guessing the average
-- cohesion barely correlates with density (spearman 0.13, p 0.22)
 - the cohesion numbers come from different tests, they do not sit on one curve
 
-## about the ranking
-- right now this is basically sorting the simulants by cohesion, which is honest
-  but a bit thin. friendliest are LSS-ISAC-1, EAC-1A, MLS-1 and the riskiest are
-  IGG-01 and NAO-1
-- it does not use the plant chemistry (pH / CEC) yet
-
 ## next
-- bring in the OSD-670 plant data and add a chemistry side
-- figure out how to combine cohesion and chemistry into one score
+- combine the cohesion risk and the pH stress into one score
+- problem: most simulants have no measured pH, only a few do, so I need to figure
+  out how to handle the ones that are missing it
 
 ## questions
-- what do I do about simulants with no measured pH?
+- how do I combine two scores when only some simulants have both?
