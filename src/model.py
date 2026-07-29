@@ -1,5 +1,4 @@
 import numpy as np
-import pandas as pd
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import cross_val_predict, GroupKFold
 from sklearn.metrics import r2_score
