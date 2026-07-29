@@ -24,3 +24,7 @@ sim["score"] = np.where(
 
 sim = sim.sort_values("score")
 print(sim[["Simulant", "compaction", "chem", "score"]].to_string(index=False))
+
+# reality check: only JSC-1A has a pH, so the chemistry only moves one row and
+# the ranking is basically still the compaction one
+print("\nsimulants with measured pH:", int(sim["pH"].notna().sum()), "of", len(sim))
