@@ -26,3 +26,9 @@
 
 ## questions
 - is a 0.4 / 0.6 split between compaction and chemistry reasonable, or arbitrary?
+
+## checking (came back to it)
+- reran all the scripts, everything still works
+- added a test for parse_num, it passes
+- cleaned up a couple of unused bits (config TARGET, a stray import in model.py)
+- tried a 50/50 weight but went back to 40/60, it only changes the one row anyway
