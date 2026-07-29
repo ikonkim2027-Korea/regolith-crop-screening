@@ -27,7 +27,7 @@ Nothing here is my own experiment, it is all reused public data.
 
 ```
 python src/harmonize.py   # build the stage A table
-python src/rank.py         # rank the simulants, writes data/processed/ranking.csv
 python src/calibrate.py    # fit plant stress against soil pH
+python src/index.py        # combine cohesion + chemistry into the index
 python src/plot.py         # bar chart of the ranking
 ```
