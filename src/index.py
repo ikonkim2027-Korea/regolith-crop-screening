@@ -1,6 +1,6 @@
 import numpy as np
 import pandas as pd
-from harmonize import parse_num, RAW, ROOT
+from harmonize import parse_num, RAW, ROOT, PROC
 
 # compaction risk from measured cohesion
 sim = pd.read_csv(RAW / "gasteiner" / "Dataset_Simulants.csv")
@@ -22,8 +22,14 @@ sim["score"] = np.where(
     sim["compaction"],
 )
 
-sim = sim.sort_values("score")
-print(sim[["Simulant", "compaction", "chem", "score"]].to_string(index=False))
+sim = sim.sort_values("score").reset_index(drop=True)
+out = sim[["Simulant", "compaction", "chem", "score"]]
+PROC.mkdir(parents=True, exist_ok=True)
+out.to_csv(PROC / "index.csv", index=False)
+print(out.to_string(index=False))
+
+print("\nfriendliest:", ", ".join(sim["Simulant"].head(3)))
+print("riskiest:  ", ", ".join(sim["Simulant"].tail(3)))
 
 # reality check: only JSC-1A has a pH, so the chemistry only moves one row and
 # the ranking is basically still the compaction one
