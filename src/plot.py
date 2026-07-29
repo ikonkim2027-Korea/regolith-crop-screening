@@ -14,5 +14,5 @@ plt.title("simulant crusting risk from measured cohesion")
 plt.tight_layout()
 
 (ROOT / "outputs").mkdir(exist_ok=True)
-plt.savefig(ROOT / "outputs" / "ranking.png", dpi=150)
-print("saved outputs/ranking.png")
+plt.savefig(ROOT / "outputs" / "index.png", dpi=150)
+print("saved outputs/index.png")
