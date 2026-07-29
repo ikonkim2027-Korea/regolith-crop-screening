@@ -4,10 +4,10 @@ import matplotlib.pyplot as plt
 import pandas as pd
 from harmonize import PROC, ROOT
 
-r = pd.read_csv(PROC / "ranking.csv")
+r = pd.read_csv(PROC / "index.csv")
 
 plt.figure(figsize=(6, 8))
-plt.barh(r["Simulant"], r["risk"])
+plt.barh(r["Simulant"], r["score"])
 plt.xlabel("crusting risk (0 = friendliest)")
 plt.gca().invert_yaxis()  # friendliest on top reads better
 plt.title("simulant crusting risk from measured cohesion")
