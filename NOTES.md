@@ -8,18 +8,21 @@
 - built a first stage A table: cohesion + bulk density + grain size
 - tried predicting cohesion with a random forest, and it does not work
 - ranked the simulants by measured cohesion (crusting risk), capped the outlier
-- added the osd-670 mixture chemistry and radish biomass (digitized from the
-  paper). radish stress lines up with pH almost perfectly (deficit = 0.351*pH -
-  1.675, R2 0.975), but it is only 4 points so I am not reading too much into it
+- calibrated radish stress against pH (deficit = 0.351*pH - 1.675, R2 0.975, 4 pts)
+- combined the compaction risk and the pH stress into one index
 
 ## the model does not work
-- once I group by mission the R2 goes negative, worse than guessing the average
+- grouped by mission the R2 goes negative, worse than guessing the average
 - the cohesion numbers come from different tests, they do not sit on one curve
 
+## about the index
+- only JSC-1A has a measured pH (1 of 23), so the chemistry only moves that one
+  row and the ranking is basically still compaction
+- friendliest come out LSS-ISAC-1, EAC-1A, MLS-1 and the riskiest are IGG-01, NAO-1
+
 ## next
-- combine the cohesion risk and the pH stress into one score
-- problem: most simulants have no measured pH, only a few do, so I need to figure
-  out how to handle the ones that are missing it
+- find pH for more simulants so the chemistry side actually does something
+- sanity check the top/bottom against any published plant growth results
 
 ## questions
-- how do I combine two scores when only some simulants have both?
+- is a 0.4 / 0.6 split between compaction and chemistry reasonable, or arbitrary?
