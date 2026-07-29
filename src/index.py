@@ -14,8 +14,13 @@ ph = pd.read_csv(ROOT / "data" / "sim_ph.csv")
 sim = sim.merge(ph, left_on="Simulant", right_on="simulant", how="left")
 sim["chem"] = (0.351 * sim["pH"] - 1.675).clip(0, 1)
 
-# combine the two
-sim["score"] = 0.4 * sim["compaction"] + 0.6 * sim["chem"]
+# combine the two. most simulants have no pH, so fall back to compaction only
+# for those instead of getting a NaN
+sim["score"] = np.where(
+    sim["pH"].notna(),
+    0.4 * sim["compaction"] + 0.6 * sim["chem"],
+    sim["compaction"],
+)
 
 sim = sim.sort_values("score")
 print(sim[["Simulant", "compaction", "chem", "score"]].to_string(index=False))
