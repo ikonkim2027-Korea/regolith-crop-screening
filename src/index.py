@@ -18,7 +18,7 @@ sim["chem"] = (0.351 * sim["pH"] - 1.675).clip(0, 1)
 # for those instead of getting a NaN
 sim["score"] = np.where(
     sim["pH"].notna(),
-    0.5 * sim["compaction"] + 0.5 * sim["chem"],
+    0.4 * sim["compaction"] + 0.6 * sim["chem"],
     sim["compaction"],
 )
 
