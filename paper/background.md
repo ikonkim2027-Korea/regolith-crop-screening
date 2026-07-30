@@ -11,7 +11,7 @@ surface crust that keeps water from the roots [russell].
 
 A handful of groups have actually put plants in regolith simulant. Wamelink and
 coworkers [wamelink] got seeds to germinate in diluted Mars and Moon simulants,
-though the plants stayed small. Eichler [eichler] took a harder line: on plain
+though the plants stayed small. Eichler [eichler] found the opposite: on plain
 Martian simulant with no amendment, almost nothing grew. The most useful study
 for this project is Russell [russell], who grew lettuce, radish and pepper in a
 carbonaceous asteroid simulant mixed with peat and watched growth fall as the
