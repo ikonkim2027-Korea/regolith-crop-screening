@@ -20,9 +20,15 @@
   row and the ranking is basically still compaction
 - friendliest come out LSS-ISAC-1, EAC-1A, MLS-1 and the riskiest are IGG-01, NAO-1
 
+## sanity check
+- compared the ranking to what the papers report (validate.py). JSC-1A lands in
+  the risky half and it does grow badly in the studies; LHS-1 is in the friendlier
+  half and it does grow a bit. so the direction lines up, which is reassuring
+- only had solid published numbers for those two though
+
 ## next
 - find pH for more simulants so the chemistry side actually does something
-- sanity check the top/bottom against any published plant growth results
+- the ranking is still basically compaction, need to be honest about that
 
 ## questions
 - is a 0.4 / 0.6 split between compaction and chemistry reasonable, or arbitrary?
