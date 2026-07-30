@@ -43,3 +43,15 @@ but I did not find one that combines engineering and biology measurements to pic
 a soil for space crops. Treating this as a data integration problem [doan], and
 being upfront about which parts of the model work and which do not [gundersen], is
 the angle this project takes.
+
+## references
+
+- [russell] Russell et al. 2022, Planetary Science Journal 3(7), 155
+- [wamelink] Wamelink et al. 2014, PLOS ONE 9(8), e103138
+- [eichler] Eichler et al. 2021, Icarus 354, 114022
+- [duri] Duri et al. 2022, Frontiers in Astronomy and Space Sciences 8, 747821
+- [gasteiner] Gasteiner, Murdoch and D'Angelo 2026, arXiv:2602.03829
+- [planetgsd] PlanetGSD 1.0, 2026, Earth System Science Data / figshare
+- [dotson] Dotson et al. 2024, Icarus 411, 115943
+- [doan] Doan, Halevy and Ives, Principles of Data Integration, 2012
+- [gundersen] Gundersen and Kjensmo, AAAI 2018
