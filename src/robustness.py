@@ -9,6 +9,7 @@ sim = sim.dropna(subset=["cohesion"]).reset_index(drop=True)
 names = sim["Simulant"].to_numpy()
 
 
+# TODO: this risk calc is copy-pasted from index.py, should pull it into one place
 def risk_of(cvals):
     c = np.clip(cvals, None, np.quantile(cvals, 0.95))
     return (c - c.min()) / (c.max() - c.min())
