@@ -30,5 +30,6 @@ python src/harmonize.py   # build the stage A table
 python src/calibrate.py    # fit plant stress against soil pH
 python src/index.py        # combine cohesion + chemistry into the index
 python src/validate.py     # check the ranking against published growth
+python src/robustness.py   # check the ranking is stable under noise
 python src/plot.py         # bar chart of the ranking
 ```
