@@ -34,6 +34,12 @@ been attempts to relate cohesion to bulk density for compacted simulants [dotson
 These are exactly the numbers that describe whether a soil will compact and crust,
 but they sit in a separate literature from the plant work.
 
-outline for the rest:
-- the gap: nobody links the two datasets
-- how I am framing it
+## the gap
+
+So there are two piles of data about the same soils. One measures how the soil
+behaves mechanically, the other measures how plants do in it, and the two almost
+never appear together. Screening indices are common in soil and materials science,
+but I did not find one that combines engineering and biology measurements to pick
+a soil for space crops. Treating this as a data integration problem [doan], and
+being upfront about which parts of the model work and which do not [gundersen], is
+the angle this project takes.
