@@ -17,11 +17,13 @@ def ranking(cvals):
 base = ranking(sim["cohesion"].to_numpy())
 top3, bot3 = set(base[:3]), set(base[-3:])
 
-# jitter the cohesion by +/-20% and see how often the ends stay the same
+# jitter the cohesion by +/-20% and see how often the ends stay the same.
+# seed it so I get the same number every time
+rng = np.random.default_rng(0)
 N = 2000
 th = tb = 0
 for _ in range(N):
-    noisy = sim["cohesion"].to_numpy() * (1 + np.random.uniform(-0.2, 0.2, len(sim)))
+    noisy = sim["cohesion"].to_numpy() * (1 + rng.uniform(-0.2, 0.2, len(sim)))
     order = ranking(noisy)
     th += set(order[:3]) == top3
     tb += set(order[-3:]) == bot3
