@@ -26,6 +26,13 @@
   half and it does grow a bit. so the direction lines up, which is reassuring
 - only had solid published numbers for those two though
 
+## robustness
+- jittered the cohesion by +/-20% over 2000 runs. the top 3 stay the same 78% of
+  the time and the bottom 3 67%. overall kendall tau is 0.95 so the order barely
+  moves, but the exact top/bottom does swap sometimes because a few simulants sit
+  almost on top of each other
+- takeaway: trust the ends, not the middle
+
 ## next
 - find pH for more simulants so the chemistry side actually does something
 - the ranking is still basically compaction, need to be honest about that
