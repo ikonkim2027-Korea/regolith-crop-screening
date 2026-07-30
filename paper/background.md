@@ -23,7 +23,17 @@ pulls these together and points out that lunar simulants in particular are
 alkaline and nutrient poor, with JSC-1A giving poor growth and LHS-1 managing a
 little.
 
+## the soil side
+
+On the engineering side there is a lot of measured data that never gets used for
+plant questions. Gasteiner and coworkers [gasteiner] recently put together an open
+database of lunar regolith and simulant properties, with cohesion, friction angle
+and bulk density across many missions and simulants. PlanetGSD [planetgsd] does
+something similar for grain size across Earth, the Moon and Mars, and there have
+been attempts to relate cohesion to bulk density for compacted simulants [dotson].
+These are exactly the numbers that describe whether a soil will compact and crust,
+but they sit in a separate literature from the plant work.
+
 outline for the rest:
-- the soil mechanics side (cohesion and grain size databases)
 - the gap: nobody links the two datasets
 - how I am framing it
