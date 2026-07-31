@@ -57,3 +57,5 @@ stayed the same in about 78 percent of runs and the riskiest three in about 67
 percent, and the overall order barely changed (Kendall tau 0.95). So the two ends
 of the ranking are trustworthy, but the middle, where several simulants sit close
 together, shuffles around.
+
+(reference keys like [russell] are listed in background.md, not repeating them here)
