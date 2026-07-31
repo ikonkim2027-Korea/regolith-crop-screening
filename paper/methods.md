@@ -49,5 +49,11 @@ ranked simulants (JSC-1A) has a published pH, so the chemistry only moves that o
 row and the ranking is still driven by compaction. I stay honest about that rather
 than pretend the two sides carry equal weight.
 
-outline for the rest:
-- checking the ranking holds up
+## checking the ranking holds up
+
+To see whether the ranking is just noise I jittered every cohesion value by up to
+20 percent and rebuilt it two thousand times. The friendliest three simulants
+stayed the same in about 78 percent of runs and the riskiest three in about 67
+percent, and the overall order barely changed (Kendall tau 0.95). So the two ends
+of the ranking are trustworthy, but the middle, where several simulants sit close
+together, shuffles around.
