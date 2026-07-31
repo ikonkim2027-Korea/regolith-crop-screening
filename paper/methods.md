@@ -46,8 +46,8 @@ The index combines the two. Where a simulant has a measured pH I take 0.4 times 
 crusting risk plus 0.6 times the calibrated chemistry stress. Where it does not, and
 most do not, I fall back to the crusting risk alone. In practice only one of the
 ranked simulants (JSC-1A) has a published pH, so the chemistry only moves that one
-row and the ranking is still driven by compaction. I stay honest about that rather
-than pretend the two sides carry equal weight.
+row and the ranking is still driven by compaction. The two sides clearly do not
+carry equal weight here yet.
 
 ## checking the ranking holds up
 
