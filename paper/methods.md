@@ -23,8 +23,16 @@ guessing the average. Cohesion barely correlates with density in this data anywa
 very different tests, from spacecraft landing estimates to lab shear tests, so they
 do not fall on one clean curve. I report this instead of hiding it.
 
+## using the measured cohesion
+
+Since the model does not work, I use the measured cohesion directly for the
+simulants that have it. Higher cohesion means the soil holds together harder and is
+more likely to crust, so I treat a rescaled cohesion as a crusting risk between 0
+and 1. One simulant, NAO-1, sits far above the rest at 95 kPa, so I cap the top at
+the 95th percentile before rescaling, otherwise it flattens everything else into
+one tiny range.
+
 outline for the rest:
-- using the measured cohesion instead (compaction risk)
 - calibrating plant stress against pH
 - putting the two into one score
 - checking the ranking holds up
