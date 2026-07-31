@@ -40,6 +40,14 @@ deficit against the all peat control and fit it against pH with a straight line,
 which gives deficit = 0.351 pH - 1.675. The fit is tight (R2 0.975), but it rests
 on only four points, so I treat it as a rough calibration and not a real model.
 
+## putting it into one score
+
+The index combines the two. Where a simulant has a measured pH I take 0.4 times the
+crusting risk plus 0.6 times the calibrated chemistry stress. Where it does not, and
+most do not, I fall back to the crusting risk alone. In practice only one of the
+ranked simulants (JSC-1A) has a published pH, so the chemistry only moves that one
+row and the ranking is still driven by compaction. I stay honest about that rather
+than pretend the two sides carry equal weight.
+
 outline for the rest:
-- putting the two into one score
 - checking the ranking holds up
