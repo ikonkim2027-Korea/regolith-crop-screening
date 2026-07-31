@@ -32,7 +32,14 @@ and 1. One simulant, NAO-1, sits far above the rest at 95 kPa, so I cap the top 
 the 95th percentile before rescaling, otherwise it flattens everything else into
 one tiny range.
 
+## calibrating plant stress against pH
+
+For the chemistry side I use the OSD-670 data [russell]. As the simulant fraction
+goes up the soil pH rises and the radish biomass drops. I measured the drop as a
+deficit against the all peat control and fit it against pH with a straight line,
+which gives deficit = 0.351 pH - 1.675. The fit is tight (R2 0.975), but it rests
+on only four points, so I treat it as a rough calibration and not a real model.
+
 outline for the rest:
-- calibrating plant stress against pH
 - putting the two into one score
 - checking the ranking holds up
