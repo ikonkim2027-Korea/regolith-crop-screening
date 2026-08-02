@@ -50,3 +50,13 @@ swap places under small perturbations. The takeaway is to trust the two ends of 
 ranking and to read the middle as a rough band rather than an exact order.
 
 ## what the ranking is and is not
+
+I want to be clear about what this ranking actually is. For 22 of the 23 simulants
+the score is driven entirely by compaction risk, because they have no published pH
+and the chemistry term falls back to nothing. So this is mostly a physical, soil
+structure ranking with a chemistry correction that so far only touches one row. It
+is a screening tool: a way to point at the few simulants most likely to crust and
+stress plants before anyone spends months on a growth trial, not a prediction of
+exactly how much biomass each soil will yield. The honest next step is to pull pH
+and CEC for more simulants so the chemistry side does real work across the table
+instead of on a single soil.
