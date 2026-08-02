@@ -46,8 +46,9 @@ friendly group in about 78 percent of the runs, and the riskiest three stayed ri
 in about 67 percent. Across all the runs the median Kendall tau against the original
 order was 0.95, so the overall order barely moves. Where it does move is the middle
 of the table, where several simulants sit within a few hundredths of each other and
-swap places under small perturbations. The takeaway is to trust the two ends of the
-ranking and to read the middle as a rough band rather than an exact order.
+swap places under small perturbations. In practice that means the friendly and
+risky groups are solid, while the exact order inside the middle band should not be
+read too literally.
 
 ## what the ranking is and is not
 
