@@ -60,3 +60,5 @@ stress plants before anyone spends months on a growth trial, not a prediction of
 exactly how much biomass each soil will yield. The honest next step is to pull pH
 and CEC for more simulants so the chemistry side does real work across the table
 instead of on a single soil.
+
+(reference keys are in background.md)
