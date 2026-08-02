@@ -27,6 +27,16 @@ chemistry term can move a single row once the pH is known.
 
 ## does it match what the studies saw
 
+There is no way to validate all 23 rankings, because most of these simulants have
+never been grown in. But two of them have published plant results I could check
+against. JSC-1A, which lands in the risky half at rank 19, is reported to cut
+germination and biomass in the growth studies [duri]. LHS-1, which the index puts
+in the friendlier half at rank 7, does sustain limited plant growth in the same
+line of work. So on the two soils where I actually have plant data the direction of
+the ranking agrees. That is only two points, so it is a sanity check and not a
+proper validation, but it is reassuring that the ranking is not pointing the wrong
+way.
+
 ## how stable the ranking is
 
 ## what the ranking is and is not
