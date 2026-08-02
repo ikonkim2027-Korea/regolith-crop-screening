@@ -39,4 +39,14 @@ way.
 
 ## how stable the ranking is
 
+The cohesion numbers are not precise, so I wanted to know how much the ranking
+depends on their exact values. I jittered every cohesion by up to 20 percent and
+rebuilt the whole index 2000 times. The friendliest three simulants stayed in the
+friendly group in about 78 percent of the runs, and the riskiest three stayed risky
+in about 67 percent. Across all the runs the median Kendall tau against the original
+order was 0.95, so the overall order barely moves. Where it does move is the middle
+of the table, where several simulants sit within a few hundredths of each other and
+swap places under small perturbations. The takeaway is to trust the two ends of the
+ranking and to read the middle as a rough band rather than an exact order.
+
 ## what the ranking is and is not
