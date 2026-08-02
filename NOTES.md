@@ -45,3 +45,11 @@
 - added a test for parse_num, it passes
 - cleaned up a couple of unused bits (config TARGET, a stray import in model.py)
 - tried a 50/50 weight but went back to 40/60, it only changes the one row anyway
+
+## writing the results section
+- wrote up the ranking, the two ends, the study cross-check and the robustness
+- made make_table.py so i have a clean ranked list to paste in instead of
+  reading numbers off index.csv by hand
+- caught myself writing "24 simulants" when it's 23, fixed it
+- kept saying the ranking is really a compaction screen, want to make sure the
+  paper doesn't oversell the chemistry part since it only hits one row
