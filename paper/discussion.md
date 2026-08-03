@@ -44,9 +44,9 @@ strong it is. But the honest first move is just filling in the chemistry column.
 
 I set out to see whether public soil data alone could flag which regolith simulants
 are likely to crust and stress plants, without growing anything. It can, at least
-for the two ends of the ranking. A rescaled cohesion picks out the dense, crust
-prone soils, a four point pH calibration adds a chemistry correction where the data
-allows, and a jitter test shows the friendly and risky groups are stable even
+for the two ends of the ranking. A rescaled cohesion picks out the soils that
+pack down hardest, a four point pH calibration adds a chemistry correction where the
+data allows, and a jitter test shows the friendly and risky groups are stable even
 though the middle is not. The result is a screening tool that is honest about its
 limits: mostly a compaction ranking today, with a chemistry side that will only do
 real work once more pH values exist. For a first pass at a hard problem, being able
