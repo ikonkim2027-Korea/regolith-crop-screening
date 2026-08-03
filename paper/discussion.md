@@ -18,6 +18,17 @@ expected.
 
 ## limitations
 
+There are real limits here and I would rather name them than paper over them. The
+biggest one is that the chemistry calibration rests on four points from a single
+study, so the pH to stress line is a rough guide, not a validated model. The second
+is that only one ranked simulant has a published pH, so the chemistry term hardly
+touches the ranking yet. The third is that the cohesion values come from very
+different tests, from lab shear boxes to landing estimates, which is exactly why the
+random forest could not fit them. And the plant side check only covers two soils,
+because those are the only ones with published growth results I could line up
+against the ranking. None of these break the screen, but they do set the ceiling on
+how much weight the exact scores can carry.
+
 ## what i would do next
 
 ## conclusion
