@@ -31,4 +31,13 @@ how much weight the exact scores can carry.
 
 ## what i would do next
 
+The clearest next step is more pH and CEC values. If even half the simulants had a
+published pH, the chemistry term would move more than one row and I could see
+whether the compaction and chemistry rankings actually agree or pull in different
+directions. After that I would want more than two soils with plant data, so the
+cross-check becomes something closer to a real validation. A longer term idea is to
+fold in a crusting measure that is not just cohesion, like a wet and dry cycle test,
+since crusting in the field is about how a soil behaves when it dries, not only how
+strong it is. But the honest first move is just filling in the chemistry column.
+
 ## conclusion
