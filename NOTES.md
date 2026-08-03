@@ -53,3 +53,10 @@
 - caught myself writing "24 simulants" when it's 23, fixed it
 - kept saying the ranking is really a compaction screen, want to make sure the
   paper doesn't oversell the chemistry part since it only hits one row
+
+## writing the discussion + conclusion
+- drafted discussion (takeaway, limits, next steps) and a conclusion
+- main message: public soil data alone can screen the ends of the ranking
+- listed the limits plainly (4-point calibration, 1 pH row, mixed cohesion tests,
+  only 2 soils to validate against) instead of burying them
+- caught "crust prone" showing up twice, reworded the conclusion
