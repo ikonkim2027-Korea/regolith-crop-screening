@@ -50,5 +50,4 @@ It builds a screening score from the measured cohesion plus a small pH calibrati
 and ranks 23 simulants from friendliest to riskiest. And it checks that ranking two
 ways: against the handful of simulants with published growth results, and with a
 jitter test to see which parts of the order are stable. The negative model result is
-kept in on purpose, because it says something real about how noisy the pooled
-cohesion data is.
+part of the story here, not something I cut out to make the paper look cleaner.
