@@ -18,4 +18,13 @@ simulants are likely to be the hardest on plants.
 
 ### the idea
 
+The starting point for this project is that the numbers needed for a first guess may
+already exist, just in the wrong place. Soil engineers have measured cohesion,
+bulk density and grain size for many of these simulants [gasteiner][planetgsd], and
+those are exactly the properties that decide whether a soil compacts and crusts. The
+plant biologists, separately, have measured pH and growth for a few of them
+[russell]. My idea is to bring the two together into one screening score, so a
+simulant can be flagged as likely friendly or likely harsh from published
+measurements alone, before anyone grows a single plant in it.
+
 ### what this paper does
