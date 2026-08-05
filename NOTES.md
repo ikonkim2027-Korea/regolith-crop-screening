@@ -60,3 +60,12 @@
 - listed the limits plainly (4-point calibration, 1 pH row, mixed cohesion tests,
   only 2 soils to validate against) instead of burying them
 - caught "crust prone" showing up twice, reworded the conclusion
+
+## writing the abstract + intro
+- drafted the intro first (problem, idea, what the paper does) then wrote the
+  abstract off it, felt easier that way than starting from the abstract
+- listed the four things the paper does so a reader gets it fast
+- trimmed a line in the intro that just repeated the abstract's noisy-data point
+- checked the cite keys in the abstract are all in background.md, they are
+- now have all the pieces: abstract, intro, background, methods, results,
+  discussion. next is stitching them into the actual paper doc
