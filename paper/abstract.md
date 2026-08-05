@@ -28,3 +28,14 @@ simulant can be flagged as likely friendly or likely harsh from published
 measurements alone, before anyone grows a single plant in it.
 
 ### what this paper does
+
+This paper does four things. It joins three public datasets, the engineering
+properties, the grain size curves and the plant results, into one table keyed by
+simulant. It tests whether a machine learning model can predict cohesion from the
+other properties, and reports honestly that it cannot on grouped cross validation.
+It builds a screening score from the measured cohesion plus a small pH calibration,
+and ranks 23 simulants from friendliest to riskiest. And it checks that ranking two
+ways: against the handful of simulants with published growth results, and with a
+jitter test to see which parts of the order are stable. The negative model result is
+kept in on purpose, because it says something real about how noisy the pooled
+cohesion data is.
