@@ -2,6 +2,19 @@
 
 ## abstract
 
+Growing crops on the Moon or Mars will mean growing them in regolith, and testing
+whether plants tolerate a given simulant takes a full multi week growth trial, so
+only a few of the many simulants have been tested. This work asks whether published
+soil measurements alone can screen simulants for how hard they will be on plants,
+without a growth trial. I join three public datasets, engineering properties, grain
+size and plant results, into one table. A random forest to predict cohesion from
+the other properties fails on mission grouped cross validation (R2 below zero),
+which I report rather than hide, since it reflects how noisy pooled cohesion data
+is. Instead I build a screening score from measured cohesion and a small pH to
+stress calibration, and rank 23 simulants. The ranking agrees with the two soils
+that have published growth results, and a jitter test shows the friendly and risky
+ends are stable while the middle is not.
+
 ## introduction
 
 ### the problem
