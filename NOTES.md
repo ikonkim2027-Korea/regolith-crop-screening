@@ -69,3 +69,10 @@
 - checked the cite keys in the abstract are all in background.md, they are
 - now have all the pieces: abstract, intro, background, methods, results,
   discussion. next is stitching them into the actual paper doc
+
+## readme cleanup
+- the readme still said "still early, collecting data" which is way out of date
+- rewrote the top, added a short what-it-found bit, listed the paper/docs/tests
+  folders that were missing from the layout
+- noticed make_table.py wasn't in the run list, added it
+- readme was written back at the start and i never went back to it, oops
