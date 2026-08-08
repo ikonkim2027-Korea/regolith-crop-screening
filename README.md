@@ -32,6 +32,9 @@ Nothing here is my own experiment, it is all reused public data.
 - src/ code
 - data/ raw downloads (gitignored) and processed tables
 - outputs/ figures and results (gitignored)
+- paper/ the write up, one file per section for now
+- docs/ reading notes on the source papers
+- tests/ a couple of tests for the parsing
 
 ## running
 
