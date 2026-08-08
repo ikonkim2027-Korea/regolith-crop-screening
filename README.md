@@ -16,9 +16,9 @@ from measurements that already exist so you know which ones are worth testing.
 ## what it found so far
 
 23 simulants ranked from friendliest to riskiest. LSS-ISAC-1 and EAC-1A come out
-easiest on plants, IGG-01 and NAO-1 the hardest. The trying-to-predict-cohesion
-model did not work (negative R2 on grouped cross validation), so the ranking uses
-the measured cohesion directly plus a small pH correction. A jitter test says the
+easiest on plants, IGG-01 and NAO-1 the hardest. The model that tried to predict cohesion from the
+other properties did not work (negative R2 on grouped cross validation), so the
+ranking uses the measured cohesion directly plus a small pH correction. A jitter test says the
 two ends of the ranking are solid and the middle is fuzzy. Full write up is in
 paper/.
 
