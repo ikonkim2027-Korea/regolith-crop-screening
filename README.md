@@ -47,3 +47,13 @@ python src/robustness.py   # check the ranking is stable under noise
 python src/make_table.py   # write the clean ranked table
 python src/plot.py         # bar chart of the ranking
 ```
+
+## tests
+
+Small checks on the parsing and the grain-size percentiles. No pytest needed, they
+run on their own:
+
+```
+python tests/test_parse.py
+python tests/test_grain.py
+```
