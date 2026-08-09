@@ -23,7 +23,21 @@ def test_percentiles_unsorted_input():
     assert 1 <= d10 <= 1000
 
 
+def test_percentiles_weights_not_100():
+    # weights that sum to 50 should give the same answer as the same shape
+    # scaled to 100, since they get normalized
+    a = _percentiles([1, 10, 100], [10, 20, 20])
+    b = _percentiles([1, 10, 100], [20, 40, 40])
+    assert a == b
+
+
+def test_percentiles_no_weight_is_none():
+    assert _percentiles([1, 10, 100], [0, 0, 0]) is None
+
+
 if __name__ == "__main__":
     test_percentiles_ordered()
     test_percentiles_unsorted_input()
+    test_percentiles_weights_not_100()
+    test_percentiles_no_weight_is_none()
     print("ok")
