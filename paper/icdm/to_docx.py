@@ -50,6 +50,7 @@ def add_body(doc, text, size=10, justify=True):
     if justify:
         p.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
     p.paragraph_format.space_after = Pt(0)
+    p.paragraph_format.first_line_indent = Inches(0.2)  # IEEE indents each para
     return p
 
 
@@ -106,6 +107,8 @@ def render():
         run = h.add_run(f"{romans[i]}.  {title.upper()}")
         run.bold = True
         run.font.size = Pt(10)
+        h.paragraph_format.space_before = Pt(6)
+        h.paragraph_format.space_after = Pt(3)
         for p in paras:
             add_body(doc, p)
 
