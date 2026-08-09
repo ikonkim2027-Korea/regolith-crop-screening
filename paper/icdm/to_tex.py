@@ -33,6 +33,19 @@ def body(text):
     return cites(esc(text))
 
 
+def table_tex():
+    t = content.TABLE
+    out = [r"\begin{table}[t]", r"\caption{" + esc(t["caption"]) + "}",
+           r"\label{tab:ranking}", r"\centering", r"\begin{tabular}{r l r}",
+           r"\hline"]
+    out.append(" & ".join(r"\textbf{" + esc(c) + "}" for c in t["columns"])
+               + r" \\ \hline")
+    for row in t["rows"]:
+        out.append(" & ".join(esc(str(x)) for x in row) + r" \\")
+    out += [r"\hline", r"\end{tabular}", r"\end{table}"]
+    return "\n".join(out)
+
+
 def render():
     a = content.AUTHOR
     out = []
@@ -54,6 +67,9 @@ def render():
     out.append(r"\end{IEEEkeywords}")
     for title, paras in content.SECTIONS:
         out.append(r"\section{" + esc(title) + "}")
+        if title == "Results":
+            out.append(table_tex())
+            out.append("")
         for p in paras:
             out.append(body(p))
             out.append("")  # blank line so latex starts a new paragraph

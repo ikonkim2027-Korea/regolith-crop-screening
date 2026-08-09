@@ -42,7 +42,41 @@ For the chemistry side the OSD-670 data \cite{russell} is used. As the simulant 
 The index combines the two. Where a simulant has a measured pH, the score is 0.4 times the crusting risk plus 0.6 times the calibrated chemistry stress; where it does not, and most do not, the score falls back to the crusting risk alone. In practice only one ranked simulant (JSC-1A) has a published pH, so the chemistry term moves that single row and the ranking is otherwise driven by compaction. The two sides do not yet carry equal weight, and the paper does not pretend they do.
 
 \section{Results}
-The index runs over the 23 simulants with a measured cohesion. Each gets a score in [0, 1], where 0 is friendliest to plants and 1 is riskiest. The scores are not evenly spread: most simulants sit below about 0.5 and only a handful reach the risky end, so the ranking is about picking out the few problem soils rather than splitting a smooth gradient. At the friendly end are LSS-ISAC-1 (0.00), EAC-1A (0.00), and MLS-1 (0.02), with LHS-1 (0.07) close behind. At the risky end IGG-01 and NAO-1 reach 1.00, with OB-1A (0.79) and PolyU-1 (0.71) just below; NAO-1 carries the very high measured cohesion and was always going to land here.
+\begin{table}[t]
+\caption{The 23 simulants ranked by screening score (0 = friendliest to plants, 1 = riskiest).}
+\label{tab:ranking}
+\centering
+\begin{tabular}{r l r}
+\hline
+\textbf{Rank} & \textbf{Simulant} & \textbf{Score} \\ \hline
+1 & LSS-ISAC-1 & 0.00 \\
+2 & EAC-1A & 0.00 \\
+3 & MLS-1 & 0.02 \\
+4 & CAS-1 & 0.04 \\
+5 & JSC-1 & 0.04 \\
+6 & BP-1 & 0.04 \\
+7 & LHS-1 & 0.07 \\
+8 & KLS-1 & 0.08 \\
+9 & LMS-1 & 0.19 \\
+10 & TLS-01 & 0.25 \\
+11 & CUG-1A & 0.25 \\
+12 & OPRL2N & 0.36 \\
+13 & NU-LHT-4M & 0.42 \\
+14 & FJS-1 & 0.42 \\
+15 & WHU-1 & 0.52 \\
+16 & CSM-LHT-1 & 0.63 \\
+17 & CSM-LMT-1 & 0.63 \\
+18 & OPRH3N & 0.63 \\
+19 & JSC-1A & 0.63 \\
+20 & PolyU-1 & 0.71 \\
+21 & OB-1A & 0.79 \\
+22 & IGG-01 & 1.00 \\
+23 & NAO-1 & 1.00 \\
+\hline
+\end{tabular}
+\end{table}
+
+The index runs over the 23 simulants with a measured cohesion, listed in Table I. Each gets a score in [0, 1], where 0 is friendliest to plants and 1 is riskiest. The scores are not evenly spread: most simulants sit below about 0.5 and only a handful reach the risky end, so the ranking is about picking out the few problem soils rather than splitting a smooth gradient. At the friendly end are LSS-ISAC-1 (0.00), EAC-1A (0.00), and MLS-1 (0.02), with LHS-1 (0.07) close behind. At the risky end IGG-01 and NAO-1 reach 1.00, with OB-1A (0.79) and PolyU-1 (0.71) just below; NAO-1 carries the very high measured cohesion and was always going to land here.
 
 JSC-1A is the informative case, as the only simulant in the table with a published pH and therefore the only score carrying the chemistry term. Its compaction alone is low (0.08), but the high pH raises the chemistry stress and the combined score reaches 0.63, moving it into the risky half. This matches the plant studies, and shows how much one row can move once its pH is known.
 
