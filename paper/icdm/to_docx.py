@@ -83,7 +83,7 @@ def render():
 
     # abstract
     ab = doc.add_paragraph()
-    run = ab.add_run("Abstract—")
+    run = ab.add_run("Abstract: ")
     run.bold = True
     run.italic = True
     run.font.size = Pt(9)
@@ -93,7 +93,7 @@ def render():
     ab.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
 
     kw = doc.add_paragraph()
-    run = kw.add_run("Index Terms—")
+    run = kw.add_run("Index Terms: ")
     run.bold = True
     run.italic = True
     run.font.size = Pt(9)
