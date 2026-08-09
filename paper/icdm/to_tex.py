@@ -56,6 +56,7 @@ def render():
         out.append(r"\section{" + esc(title) + "}")
         for p in paras:
             out.append(body(p))
+            out.append("")  # blank line so latex starts a new paragraph
     out.append(r"\begin{thebibliography}{9}")
     for key, ref in content.REFERENCES:
         out.append(r"\bibitem{" + key + "} " + esc(ref))
