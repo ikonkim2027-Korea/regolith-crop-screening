@@ -76,3 +76,13 @@
   folders that were missing from the layout
 - noticed make_table.py wasn't in the run list, added it
 - readme was written back at the start and i never went back to it, oops
+
+## stitching the sections together
+- wrote assemble.py to glue the section files into one draft.md so i can read
+  the whole paper at once instead of jumping between files
+- first version was too naive: no title, the "(reference keys...)" notes showed
+  up mid-paper, and the reference list ended up stuck in the middle after
+  background instead of at the end
+- fixed those one at a time (title block, strip the notes, move refs to the end,
+  drop the "(draft)" tags from the headings)
+- keeping the sections in separate files while drafting, draft.md is generated
