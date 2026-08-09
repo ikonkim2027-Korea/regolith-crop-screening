@@ -3,7 +3,7 @@
 Ikon Kim
 
 
-# abstract + intro (draft)
+# abstract + intro
 
 ## abstract
 
@@ -57,7 +57,7 @@ ways: against the handful of simulants with published growth results, and with a
 jitter test to see which parts of the order are stable. The negative model result is
 part of the story here, not something I cut out to make the paper look cleaner.
 
-# background / related work (draft)
+# background / related work
 
 ## growing food off Earth
 
@@ -101,7 +101,7 @@ a soil for space crops. Treating this as a data integration problem [doan], and
 being upfront about which parts of the model work and which do not [gundersen], is
 the angle this project takes.
 
-# methods (draft)
+# methods
 
 ## the data
 
@@ -161,7 +161,7 @@ percent, and the overall order barely changed (Kendall tau 0.95). So the two end
 of the ranking are trustworthy, but the middle, where several simulants sit close
 together, shuffles around.
 
-# results (draft)
+# results
 
 ## the ranking
 
@@ -225,7 +225,7 @@ exactly how much biomass each soil will yield. The honest next step is to pull p
 and CEC for more simulants so the chemistry side does real work across the table
 instead of on a single soil.
 
-# discussion (draft)
+# discussion
 
 ## what this says about screening regolith
 
