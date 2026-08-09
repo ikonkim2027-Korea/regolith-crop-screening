@@ -96,3 +96,17 @@
 - wrote tests: ordered output, unsorted input still ordered (the old flip bug),
   weights that don't sum to 100 get normalized, zero weight returns None
 - no pytest on this machine so they run standalone like the parse test
+
+## building the icdm submission (latex + word)
+- icdm wants IEEE computer society format, up to 5 pages incl refs, single-blind,
+  and "High School Student" in the first author affiliation. deadline aug 20.
+- put the whole paper text in paper/icdm/content.py and wrote two tiny renderers
+  (to_tex.py, to_docx.py) so the latex and word versions stay in sync from one
+  source instead of me editing two files
+- latex: IEEEtran, refs inlined so it builds on overleaf in one pass. first pass
+  ran all the paragraphs together, needed a blank line between them
+- word: python-docx. first version was single column, then set the body section
+  to two columns with the title spanning the top. added the para indent after.
+  rendered it to pdf to check, comes out 3 pages, under the 5 limit
+- swapped the em-dash after "Abstract" for a colon, don't want dashes in here
+- todo: my email, recheck the reference details, maybe a ranking figure
