@@ -226,5 +226,36 @@ SECTIONS = [
     ]),
 ]
 
-# (key, formatted reference string), in order of first appearance
-REFERENCES = []
+# (key, formatted reference string), in order of first appearance.
+# double-check volumes/DOIs against the originals before submitting.
+REFERENCES = [
+    ("russell",
+     "R. Russell et al., \"Testing CI asteroid regolith simulant as a plant "
+     "growth medium,\" Planetary Science Journal, vol. 3, no. 7, art. 155, 2022."),
+    ("gasteiner",
+     "L. Gasteiner, N. Murdoch, and A. D'Angelo, \"An open database of lunar "
+     "regolith and simulant mechanical properties,\" arXiv:2602.03829, 2026."),
+    ("planetgsd",
+     "PlanetGSD 1.0: a global grain-size database for planetary surfaces, Earth "
+     "System Science Data, 2026."),
+    ("wamelink",
+     "G. W. W. Wamelink et al., \"Can plants grow on Mars and the Moon: a growth "
+     "experiment on Mars and Moon soil simulants,\" PLOS ONE, vol. 9, no. 8, "
+     "e103138, 2014."),
+    ("eichler",
+     "A. Eichler et al., \"Challenging the agricultural viability of Martian "
+     "regolith simulants,\" Icarus, vol. 354, art. 114022, 2021."),
+    ("duri",
+     "L. G. Duri et al., \"The potential of regolith simulants as agricultural "
+     "substrates,\" Frontiers in Astronomy and Space Sciences, vol. 8, art. "
+     "747821, 2022."),
+    ("dotson",
+     "J. Dotson et al., \"Cohesion and bulk density relationships for compacted "
+     "regolith,\" Icarus, vol. 411, art. 115943, 2024."),
+    ("doan",
+     "A. Doan, A. Halevy, and Z. Ives, Principles of Data Integration. Morgan "
+     "Kaufmann, 2012."),
+    ("gundersen",
+     "O. E. Gundersen and S. Kjensmo, \"State of the art: reproducibility in "
+     "artificial intelligence,\" in Proc. AAAI, 2018."),
+]
