@@ -15,8 +15,20 @@ def load(name):
     return "\n".join(keep).strip()
 
 parts = [TITLE]
+refs = ""
 for name in ORDER:
-    parts.append(load(name))
+    body = load(name)
+    if name == "background":
+        # the reference list lives at the bottom of background.md; pull it out
+        # so it ends up at the end of the whole paper, not in the middle
+        head, sep, tail = body.partition("## references")
+        if sep:
+            body = head.strip()
+            refs = (sep + tail).strip()
+    parts.append(body)
+
+if refs:
+    parts.append(refs)
 
 (HERE / "draft.md").write_text("\n\n".join(parts) + "\n")
 print("wrote draft.md")
