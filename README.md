@@ -1,59 +1,61 @@
 # regolith-crop-screening
 
-Figuring out which lunar and asteroid regolith simulants would stress plants the
-most, using data that is already public instead of running greenhouse trials.
+Ranking lunar and asteroid regolith simulants by how likely they are to crust and
+stress plants, worked out from soil numbers that are already published. The point
+is to say, before any greenhouse trial, which simulants are worth the weeks a trial
+takes.
 
-The pipeline runs end to end now and there is a full ranking of 23 simulants, so
-this is past the setup stage. Writing it up is what is left.
+## why bother
 
-## the idea
+Crops on the Moon or Mars have to grow in regolith, which is harsh soil: alkaline,
+short on nutrients, and it packs into a crust that keeps water off the roots. Labs
+make dozens of simulants to stand in for the real thing, and the only way to know
+whether plants tolerate one is to grow in it for weeks. There are far more
+simulants than anyone has time to test, so guessing the bad ones up front saves
+real work.
 
-Space crops have to grow in regolith, which is rough soil: high pH, low nutrients,
-and it compacts and forms a crust that dries roots out. There are a lot of
-simulants and testing each one in a greenhouse takes weeks. I want to rank them
-from measurements that already exist so you know which ones are worth testing.
+## the result
 
-## what it found so far
+23 simulants scored from 0 (friendliest to plants) to 1 (riskiest):
 
-23 simulants ranked from friendliest to riskiest. LSS-ISAC-1 and EAC-1A come out
-easiest on plants, IGG-01 and NAO-1 the hardest. The model that tried to predict cohesion from the
-other properties did not work (negative R2 on grouped cross validation), so the
-ranking uses the measured cohesion directly plus a small pH correction. A jitter test says the
-two ends of the ranking are solid and the middle is fuzzy. Full write up is in
-paper/.
+| friendliest |      | riskiest |      |
+|-------------|------|----------|------|
+| LSS-ISAC-1  | 0.00 | NAO-1    | 1.00 |
+| EAC-1A      | 0.00 | IGG-01   | 1.00 |
+| MLS-1       | 0.02 | OB-1A    | 0.79 |
+| CAS-1       | 0.04 | PolyU-1  | 0.71 |
+| JSC-1       | 0.04 | JSC-1A   | 0.63 |
+
+The first thing I tried, predicting cohesion from grain size and density with a
+random forest, did not work: the score went negative under mission-grouped cross
+validation. So the index uses the measured cohesion straight, as a crusting-risk
+score, with a small pH correction where a simulant has published chemistry. A
+2000-run jitter test says the top and bottom of the ranking hold while the middle
+shuffles around.
+
+## how it works
+
+One script per step under `src/`, meant to run in this order:
+
+1. `harmonize.py` joins the raw property tables into one row per simulant
+2. `calibrate.py` fits plant stress against soil pH from the OSD-670 study
+3. `index.py` turns measured cohesion into a crusting-risk score and folds in pH
+4. `validate.py` checks the ranking against the two simulants with growth data
+5. `robustness.py` re-runs the ranking under noise to see what holds
+6. `make_table.py` writes the clean ranked table
+
+`model.py` is the cohesion-prediction attempt that did not pan out, kept in as an
+honest negative result. `plot.py` draws the bar chart. Parsing and the grain-size
+math have their own checks in `tests/`.
 
 ## data
 
-Pulling from a few public sources (see data/raw/PROVENANCE.md for the links).
-Nothing here is my own experiment, it is all reused public data.
+All reused public data, nothing measured here. The sources and their licenses are
+listed in `data/raw/PROVENANCE.md`. Raw downloads and processed tables are
+gitignored.
 
-## layout
+## the writeup
 
-- src/ code
-- data/ raw downloads (gitignored) and processed tables
-- outputs/ figures and results (gitignored)
-- paper/ the write up, one file per section for now
-- docs/ reading notes on the source papers
-- tests/ a couple of tests for the parsing
-
-## running
-
-```
-python src/harmonize.py   # build the stage A table
-python src/calibrate.py    # fit plant stress against soil pH
-python src/index.py        # combine cohesion + chemistry into the index
-python src/validate.py     # check the ranking against published growth
-python src/robustness.py   # check the ranking is stable under noise
-python src/make_table.py   # write the clean ranked table
-python src/plot.py         # bar chart of the ranking
-```
-
-## tests
-
-Small checks on the parsing and the grain-size percentiles. No pytest needed, they
-run on their own:
-
-```
-python tests/test_parse.py
-python tests/test_grain.py
-```
+`paper/` holds the manuscript, one markdown file per section, stitched together in
+`paper/draft.md`. The version for the ICDM Teen symposium lives in `paper/icdm/`,
+built to the IEEE format as both LaTeX (for Overleaf) and Word.
