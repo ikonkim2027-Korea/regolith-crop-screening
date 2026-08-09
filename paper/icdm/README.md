@@ -27,4 +27,4 @@ builds in one pass without bibtex. The Word version needs `python-docx`.
 
 - fill in my email in the author block
 - double-check the reference details (volumes, DOIs) against the originals
-- add the ranking figure/table once it fits the page budget
+- maybe a small figure of the score distribution if it fits the page budget

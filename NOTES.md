@@ -110,3 +110,11 @@
   rendered it to pdf to check, comes out 3 pages, under the 5 limit
 - swapped the em-dash after "Abstract" for a colon, don't want dashes in here
 - todo: my email, recheck the reference details, maybe a ranking figure
+
+## added the ranking table
+- the paper described the 23-simulant ranking but never showed it, which is weak
+  for a data-mining writeup, so i put the full ranked table in (Table I)
+- data lives in content.py so both renderers pick it up. latex was easy with a
+  tabular, the word one fought me: the rank column kept autofitting to zero width
+  until i forced a fixed table layout with an explicit grid
+- still 3 pages after adding it, under the 5 page limit
