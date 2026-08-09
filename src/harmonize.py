@@ -24,22 +24,33 @@ def parse_num(x):
     return sum(float(n) for n in nums) / len(nums)
 
 
+def _percentiles(sizes, weights):
+    """d10/d50/d90 from one sieve curve. Sorts by size first so the cumulative
+    curve is monotonic (otherwise the percentiles come out flipped), and
+    normalizes the weights because not every sample adds up to 100%. Returns None
+    if there is no weight to work with."""
+    sizes = np.asarray(sizes, dtype=float)
+    weights = np.asarray(weights, dtype=float)
+    order = np.argsort(sizes)
+    sizes, weights = sizes[order], weights[order]
+    total = weights.sum()
+    if total <= 0:
+        return None
+    passing = np.cumsum(weights) / total * 100
+    return tuple(float(np.interp(p, passing, sizes)) for p in (10, 50, 90))
+
+
 def grain_percentiles():
     """d10/d50/d90 per sample from the sieve curves."""
     psd = pd.read_csv(RAW / "gasteiner" / "Dataset_Samples_PSD.csv", sep=";")
     out = {}
     for (mission, sample), g in psd.groupby(["Mission", "Sample"]):
-        g = g.copy()
-        g["size"] = g["Sieve size (µm)"].map(parse_num)
-        g["w"] = g["weight %"].map(parse_num).fillna(0)
-        g = g.sort_values("size")  # need smallest size first or the percentiles flip
-        sizes = g["size"].to_numpy(dtype=float)
-        w = g["w"].to_numpy(dtype=float)
-        if w.sum() <= 0:
+        sizes = g["Sieve size (µm)"].map(parse_num)
+        w = g["weight %"].map(parse_num).fillna(0)
+        res = _percentiles(sizes.to_numpy(), w.to_numpy())
+        if res is None:
             continue
-        passing = np.cumsum(w) / w.sum() * 100  # not every sample adds up to 100
-        d10, d50, d90 = (float(np.interp(p, passing, sizes)) for p in (10, 50, 90))
-        out[(mission, sample)] = (d10, d50, d90)
+        out[(mission, sample)] = res
     return out
 
 
