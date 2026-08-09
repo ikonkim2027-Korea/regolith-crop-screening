@@ -86,3 +86,13 @@
 - fixed those one at a time (title block, strip the notes, move refs to the end,
   drop the "(draft)" tags from the headings)
 - keeping the sections in separate files while drafting, draft.md is generated
+
+## locking down the grain-size numbers with tests
+- wanted a test on the percentile math but grain_percentiles reads the csv
+  directly so there was nothing to call. pulled the actual math out into
+  _percentiles(sizes, weights) and had grain_percentiles call it
+- checked the refactor gives the exact same output (147 samples, same d10/d50/d90)
+  before trusting it
+- wrote tests: ordered output, unsorted input still ordered (the old flip bug),
+  weights that don't sum to 100 get normalized, zero weight returns None
+- no pytest on this machine so they run standalone like the parse test
