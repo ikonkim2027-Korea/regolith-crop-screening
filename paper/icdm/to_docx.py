@@ -8,6 +8,7 @@ from docx import Document
 from docx.shared import Pt, Inches
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.enum.section import WD_SECTION
+from docx.enum.table import WD_TABLE_ALIGNMENT
 from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
 
@@ -52,6 +53,48 @@ def add_body(doc, text, size=10, justify=True):
     p.paragraph_format.space_after = Pt(0)
     p.paragraph_format.first_line_indent = Inches(0.2)  # IEEE indents each para
     return p
+
+
+def add_ranking_table(doc):
+    t = content.TABLE
+    cap = doc.add_paragraph()
+    cap.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    r = cap.add_run("TABLE I")
+    r.bold = True
+    r.font.size = Pt(8)
+    sub = doc.add_paragraph()
+    sub.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    rr = sub.add_run(t["caption"])
+    rr.italic = True
+    rr.font.size = Pt(8)
+    tbl = doc.add_table(rows=1, cols=len(t["columns"]))
+    tbl.style = "Table Grid"
+    tbl.alignment = WD_TABLE_ALIGNMENT.CENTER
+    tbl.autofit = False
+    for i, c in enumerate(t["columns"]):
+        run = tbl.rows[0].cells[i].paragraphs[0].add_run(c)
+        run.bold = True
+        run.font.size = Pt(8)
+    for row in t["rows"]:
+        cells = tbl.add_row().cells
+        for i, val in enumerate(row):
+            cells[i].paragraphs[0].add_run(str(val)).font.size = Pt(8)
+    # force a fixed layout with an explicit grid, otherwise the narrow rank
+    # column autofits down to nothing when Word or LibreOffice renders it
+    _fix_widths(tbl, [720, 2016, 864])  # twips: 0.5in, 1.4in, 0.6in
+
+
+def _fix_widths(tbl, widths_twips):
+    tblPr = tbl._tbl.tblPr
+    layout = OxmlElement("w:tblLayout")
+    layout.set(qn("w:type"), "fixed")
+    tblPr.append(layout)
+    grid = tbl._tbl.find(qn("w:tblGrid"))
+    for col, w in zip(grid.findall(qn("w:gridCol")), widths_twips):
+        col.set(qn("w:w"), str(w))
+    for row in tbl.rows:
+        for cell, w in zip(row.cells, widths_twips):
+            cell.width = Inches(w / 1440)
 
 
 def render():
@@ -109,6 +152,8 @@ def render():
         run.font.size = Pt(10)
         h.paragraph_format.space_before = Pt(6)
         h.paragraph_format.space_after = Pt(3)
+        if title == "Results":
+            add_ranking_table(doc)
         for p in paras:
             add_body(doc, p)
 
