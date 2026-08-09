@@ -1,3 +1,8 @@
+# From Soil Mechanics to Crop Stress
+
+Ikon Kim
+
+
 # abstract + intro (draft)
 
 ## abstract
@@ -96,18 +101,6 @@ a soil for space crops. Treating this as a data integration problem [doan], and
 being upfront about which parts of the model work and which do not [gundersen], is
 the angle this project takes.
 
-## references
-
-- [russell] Russell et al. 2022, Planetary Science Journal 3(7), 155
-- [wamelink] Wamelink et al. 2014, PLOS ONE 9(8), e103138
-- [eichler] Eichler et al. 2021, Icarus 354, 114022
-- [duri] Duri et al. 2022, Frontiers in Astronomy and Space Sciences 8, 747821
-- [gasteiner] Gasteiner, Murdoch and D'Angelo 2026, arXiv:2602.03829
-- [planetgsd] PlanetGSD 1.0, 2026, Earth System Science Data / figshare
-- [dotson] Dotson et al. 2024, Icarus 411, 115943
-- [doan] Doan, Halevy and Ives, Principles of Data Integration, 2012
-- [gundersen] Gundersen and Kjensmo, AAAI 2018
-
 # methods (draft)
 
 ## the data
@@ -167,8 +160,6 @@ stayed the same in about 78 percent of runs and the riskiest three in about 67
 percent, and the overall order barely changed (Kendall tau 0.95). So the two ends
 of the ranking are trustworthy, but the middle, where several simulants sit close
 together, shuffles around.
-
-(reference keys like [russell] are listed in background.md, not repeating them here)
 
 # results (draft)
 
@@ -234,8 +225,6 @@ exactly how much biomass each soil will yield. The honest next step is to pull p
 and CEC for more simulants so the chemistry side does real work across the table
 instead of on a single soil.
 
-(reference keys are in background.md)
-
 # discussion (draft)
 
 ## what this says about screening regolith
@@ -290,4 +279,14 @@ limits: mostly a compaction ranking today, with a chemistry side that will only 
 real work once more pH values exist. For a first pass at a hard problem, being able
 to point at the likely trouble soils before anyone plants a seed is already useful.
 
-(reference keys are in background.md)
+## references
+
+- [russell] Russell et al. 2022, Planetary Science Journal 3(7), 155
+- [wamelink] Wamelink et al. 2014, PLOS ONE 9(8), e103138
+- [eichler] Eichler et al. 2021, Icarus 354, 114022
+- [duri] Duri et al. 2022, Frontiers in Astronomy and Space Sciences 8, 747821
+- [gasteiner] Gasteiner, Murdoch and D'Angelo 2026, arXiv:2602.03829
+- [planetgsd] PlanetGSD 1.0, 2026, Earth System Science Data / figshare
+- [dotson] Dotson et al. 2024, Icarus 411, 115943
+- [doan] Doan, Halevy and Ives, Principles of Data Integration, 2012
+- [gundersen] Gundersen and Kjensmo, AAAI 2018
