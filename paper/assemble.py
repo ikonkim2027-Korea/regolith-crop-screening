@@ -12,6 +12,9 @@ def load(name):
     # the section files point at background.md for the refs; drop those notes
     # when everything is in one file
     keep = [ln for ln in text.splitlines() if "reference keys" not in ln]
+    # the per-section headings are tagged "(draft)" while i work, don't want
+    # that showing up in the merged paper
+    keep = [ln.replace(" (draft)", "") for ln in keep]
     return "\n".join(keep).strip()
 
 parts = [TITLE]
