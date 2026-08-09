@@ -148,6 +148,82 @@ SECTIONS = [
         "is otherwise driven by compaction. The two sides do not yet carry equal "
         "weight, and the paper does not pretend they do.",
     ]),
+    ("Results", [
+        "The index runs over the 23 simulants with a measured cohesion. Each gets "
+        "a score in [0, 1], where 0 is friendliest to plants and 1 is riskiest. "
+        "The scores are not evenly spread: most simulants sit below about 0.5 and "
+        "only a handful reach the risky end, so the ranking is about picking out "
+        "the few problem soils rather than splitting a smooth gradient. At the "
+        "friendly end are LSS-ISAC-1 (0.00), EAC-1A (0.00), and MLS-1 (0.02), with "
+        "LHS-1 (0.07) close behind. At the risky end IGG-01 and NAO-1 reach 1.00, "
+        "with OB-1A (0.79) and PolyU-1 (0.71) just below; NAO-1 carries the very "
+        "high measured cohesion and was always going to land here.",
+
+        "JSC-1A is the informative case, as the only simulant in the table with a "
+        "published pH and therefore the only score carrying the chemistry term. "
+        "Its compaction alone is low (0.08), but the high pH raises the chemistry "
+        "stress and the combined score reaches 0.63, moving it into the risky "
+        "half. This matches the plant studies, and shows how much one row can move "
+        "once its pH is known.",
+
+        "Two simulants have published plant results to check against. JSC-1A, "
+        "which the index places in the risky half at rank 19, is reported to cut "
+        "germination and biomass {duri}. LHS-1, placed in the friendlier half at "
+        "rank 7, does sustain limited growth in the same line of work. On the two "
+        "soils with plant data the direction of the ranking agrees. Two points is "
+        "a sanity check, not a validation, but it is reassuring that the ranking "
+        "does not point the wrong way.",
+
+        "To test stability, every cohesion value was jittered by up to 20 percent "
+        "and the whole index rebuilt 2000 times. The friendliest three simulants "
+        "stayed in the friendly group in about 78 percent of runs and the riskiest "
+        "three in about 67 percent, with a median Kendall tau of 0.95 against the "
+        "original order. The order barely moves overall; where it moves is the "
+        "middle, where several simulants sit within a few hundredths and swap "
+        "places. So the two ends are solid and the middle band should not be read "
+        "as an exact order.",
+
+        "It is worth being clear about what the ranking is. For 22 of the 23 "
+        "simulants the score is driven entirely by compaction, because they have "
+        "no published pH. So this is mostly a physical, soil-structure ranking "
+        "with a chemistry correction that so far touches one row. It is a "
+        "screening tool, a way to point at the simulants most likely to crust and "
+        "stress plants before anyone spends months on a growth trial, not a "
+        "prediction of exact biomass.",
+    ]),
+    ("Discussion", [
+        "The main point is that a useful first pass at which simulants will be "
+        "hard to grow in is possible without running a single growth trial. The "
+        "measured properties already exist and carry enough signal to separate "
+        "loose, friendly soils from dense, crust-prone ones. Because trials are "
+        "slow and expensive and there are far more candidate simulants than any "
+        "lab can test, a screen that puts likely problem soils at the top lets "
+        "people spend trial time where it counts. Notably, the simple physical "
+        "measure did most of the work; the chemistry probably matters more in "
+        "reality, but compaction is what public data let me measure across the "
+        "whole set, which is itself a finding.",
+
+        "The limits are worth naming. The chemistry calibration rests on four "
+        "points from one study, so the pH-to-stress line is a rough guide. Only "
+        "one ranked simulant has a published pH, so the chemistry term hardly "
+        "touches the ranking. The cohesion values come from very different tests, "
+        "which is exactly why the random forest could not fit them. And the plant "
+        "check covers only two soils. None of these break the screen, but they set "
+        "a ceiling on how much weight the exact scores can carry. The clearest "
+        "next step is more pH and CEC values, so the chemistry side does real work "
+        "across the table rather than on a single row.",
+    ]),
+    ("Conclusion", [
+        "This work asked whether public soil data alone can flag which regolith "
+        "simulants are likely to crust and stress plants, without growing "
+        "anything. It can, at least for the two ends of the ranking. A rescaled "
+        "cohesion picks out the soils that pack down hardest, a four-point pH "
+        "calibration adds a chemistry correction where the data allows, and a "
+        "jitter test shows the friendly and risky groups are stable while the "
+        "middle is not. The negative modeling result is reported alongside the "
+        "positive screen. For a first pass at a hard problem, pointing at the "
+        "likely trouble soils before anyone plants a seed is already useful.",
+    ]),
 ]
 
 # (key, formatted reference string), in order of first appearance
