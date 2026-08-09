@@ -149,8 +149,9 @@ SECTIONS = [
         "weight, and the paper does not pretend they do.",
     ]),
     ("Results", [
-        "The index runs over the 23 simulants with a measured cohesion. Each gets "
-        "a score in [0, 1], where 0 is friendliest to plants and 1 is riskiest. "
+        "The index runs over the 23 simulants with a measured cohesion, listed in "
+        "Table I. Each gets a score in [0, 1], where 0 is friendliest to plants "
+        "and 1 is riskiest. "
         "The scores are not evenly spread: most simulants sit below about 0.5 and "
         "only a handful reach the risky end, so the ranking is about picking out "
         "the few problem soils rather than splitting a smooth gradient. At the "
@@ -225,6 +226,38 @@ SECTIONS = [
         "likely trouble soils before anyone plants a seed is already useful.",
     ]),
 ]
+
+# the ranking table. rendered into the Results section by both renderers.
+TABLE = {
+    "caption": "The 23 simulants ranked by screening score (0 = friendliest to "
+               "plants, 1 = riskiest).",
+    "columns": ["Rank", "Simulant", "Score"],
+    "rows": [
+        [1, "LSS-ISAC-1", "0.00"],
+        [2, "EAC-1A", "0.00"],
+        [3, "MLS-1", "0.02"],
+        [4, "CAS-1", "0.04"],
+        [5, "JSC-1", "0.04"],
+        [6, "BP-1", "0.04"],
+        [7, "LHS-1", "0.07"],
+        [8, "KLS-1", "0.08"],
+        [9, "LMS-1", "0.19"],
+        [10, "TLS-01", "0.25"],
+        [11, "CUG-1A", "0.25"],
+        [12, "OPRL2N", "0.36"],
+        [13, "NU-LHT-4M", "0.42"],
+        [14, "FJS-1", "0.42"],
+        [15, "WHU-1", "0.52"],
+        [16, "CSM-LHT-1", "0.63"],
+        [17, "CSM-LMT-1", "0.63"],
+        [18, "OPRH3N", "0.63"],
+        [19, "JSC-1A", "0.63"],
+        [20, "PolyU-1", "0.71"],
+        [21, "OB-1A", "0.79"],
+        [22, "IGG-01", "1.00"],
+        [23, "NAO-1", "1.00"],
+    ],
+}
 
 # (key, formatted reference string), in order of first appearance.
 # double-check volumes/DOIs against the originals before submitting.
