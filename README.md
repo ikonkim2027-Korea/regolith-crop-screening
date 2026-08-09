@@ -54,7 +54,7 @@ All reused public data, nothing measured here. The sources and their licenses ar
 listed in `data/raw/PROVENANCE.md`. Raw downloads and processed tables are
 gitignored.
 
-## the writeup
+## paper
 
 `paper/` holds the manuscript, one markdown file per section, stitched together in
 `paper/draft.md`. The version for the ICDM Teen symposium lives in `paper/icdm/`,
