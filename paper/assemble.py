@@ -5,7 +5,9 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 ORDER = ["abstract", "background", "methods", "results", "discussion"]
 
-parts = []
+TITLE = "# From Soil Mechanics to Crop Stress\n\nIkon Kim\n"
+
+parts = [TITLE]
 for name in ORDER:
     parts.append((HERE / f"{name}.md").read_text().strip())
 
