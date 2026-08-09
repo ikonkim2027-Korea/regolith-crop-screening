@@ -98,6 +98,56 @@ SECTIONS = [
         "integration problem {doan}, and being explicit about which parts of the "
         "model work and which do not {gundersen}, is the angle taken here.",
     ]),
+    ("Data", [
+        "Three public datasets are used. The Gasteiner open database {gasteiner} "
+        "has measured cohesion, friction angle, and bulk density for lunar "
+        "regolith and simulants across many missions and lab studies. PlanetGSD "
+        "{planetgsd} gives grain-size curves, and the OSD-670 study {russell} "
+        "supplies the plant side, with soil pH and cation exchange capacity for "
+        "each peat and simulant mixture. Nothing here is an original experiment; "
+        "all of it is reused public data, with sources and licenses logged in the "
+        "repository.",
+
+        "The cohesion values needed cleaning first, because older reports give "
+        "ranges such as \"0.15 - 0.7\" rather than a single number, so the "
+        "midpoint of each range is taken. From the sieve curves, d10, d50, and "
+        "d90 are computed per sample by sorting sizes, normalizing the weights, "
+        "and interpolating the cumulative passing curve. After joining, 23 "
+        "simulants carry a usable measured cohesion and enter the ranking.",
+    ]),
+    ("Method", [
+        "The first idea was to predict cohesion from grain size and bulk density "
+        "with a random forest, to fill in simulants with no measured cohesion. To "
+        "keep the test honest, cross validation is grouped by mission, so the "
+        "model never trains on a soil from the same body it is tested on. It does "
+        "not work: the grouped-CV R2 comes out below zero, worse than predicting "
+        "the mean. Cohesion barely correlates with density here (Spearman about "
+        "0.13). The likely cause is that the cohesion numbers come from very "
+        "different tests, from spacecraft landing estimates to lab shear boxes, so "
+        "they do not fall on one clean curve. This is reported rather than hidden.",
+
+        "Since the model does not work, the measured cohesion is used directly for "
+        "the simulants that have it. Higher cohesion means a soil holds together "
+        "harder and is more likely to crust, so a rescaled cohesion is treated as "
+        "a crusting risk in [0, 1]. One simulant, NAO-1, sits far above the rest "
+        "near 95 kPa, so the scale is capped at the 95th percentile before "
+        "rescaling, otherwise it flattens everything else into one narrow band.",
+
+        "For the chemistry side the OSD-670 data {russell} is used. As the "
+        "simulant fraction rises, soil pH rises and radish biomass drops. The drop "
+        "is measured as a deficit against the all-peat control and fit against pH "
+        "with a straight line, giving deficit = 0.351 pH - 1.675. The fit is tight "
+        "(R2 = 0.975) but rests on only four points, so it is treated as a rough "
+        "calibration, not a validated model.",
+
+        "The index combines the two. Where a simulant has a measured pH, the score "
+        "is 0.4 times the crusting risk plus 0.6 times the calibrated chemistry "
+        "stress; where it does not, and most do not, the score falls back to the "
+        "crusting risk alone. In practice only one ranked simulant (JSC-1A) has a "
+        "published pH, so the chemistry term moves that single row and the ranking "
+        "is otherwise driven by compaction. The two sides do not yet carry equal "
+        "weight, and the paper does not pretend they do.",
+    ]),
 ]
 
 # (key, formatted reference string), in order of first appearance
