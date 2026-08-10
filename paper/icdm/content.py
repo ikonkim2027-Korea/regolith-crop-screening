@@ -179,13 +179,14 @@ SECTIONS = [
         "does not point the wrong way.",
 
         "To test stability, every cohesion value was jittered by up to 20 percent "
-        "and the whole index rebuilt 2000 times. The friendliest three simulants "
+        "and the compaction ranking rebuilt 2000 times. The friendliest three simulants "
         "stayed in the friendly group in about 78 percent of runs and the riskiest "
         "three in about 67 percent, with a median Kendall tau of 0.95 against the "
         "original order. The order barely moves overall; where it moves is the "
         "middle, where several simulants sit within a few hundredths and swap "
         "places. So the two ends are solid and the middle band should not be read "
-        "as an exact order.",
+        "as an exact order. This test moves the compaction scores only, so it "
+        "does not probe JSC-1A, the single row the chemistry term adjusts.",
 
         "It is worth being clear about what the ranking is. For 22 of the 23 "
         "simulants the score is driven entirely by compaction, because they have "
