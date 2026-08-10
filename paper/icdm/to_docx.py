@@ -55,6 +55,19 @@ def add_body(doc, text, size=10, justify=True):
     return p
 
 
+def add_figure(doc):
+    f = content.FIGURE
+    p = doc.add_paragraph()
+    p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    p.add_run().add_picture(str(HERE / f["file"]), width=Inches(3.0))
+    cap = doc.add_paragraph()
+    cap.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    run = cap.add_run("Fig. 1.  ")
+    run.bold = True
+    run.font.size = Pt(8)
+    cap.add_run(f["caption"]).font.size = Pt(8)
+
+
 def add_ranking_table(doc):
     t = content.TABLE
     cap = doc.add_paragraph()
@@ -154,6 +167,7 @@ def render():
         h.paragraph_format.space_after = Pt(3)
         if title == "Results":
             add_ranking_table(doc)
+            add_figure(doc)
         for p in paras:
             add_body(doc, p)
 
