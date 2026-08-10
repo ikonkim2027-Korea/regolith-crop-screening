@@ -138,7 +138,9 @@ SECTIONS = [
         "is measured as a deficit against the all-peat control and fit against pH "
         "with a straight line, giving deficit = 0.351 pH - 1.675. The fit is tight "
         "(R2 = 0.975) but rests on only four points, so it is treated as a rough "
-        "calibration, not a validated model.",
+        "calibration, not a validated model. The four mixtures span pH 4.7 to "
+        "7.0, so applying the line to JSC-1A at pH 9.6 reaches well past the "
+        "fitted range and pins its chemistry term at the ceiling.",
 
         "The index combines the two. Where a simulant has a measured pH, the score "
         "is 0.4 times the crusting risk plus 0.6 times the calibrated chemistry "
