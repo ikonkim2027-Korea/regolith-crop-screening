@@ -33,6 +33,16 @@ def body(text):
     return cites(esc(text))
 
 
+def figure_tex():
+    f = content.FIGURE
+    return "\n".join([
+        r"\begin{figure}[t]", r"\centering",
+        r"\includegraphics[width=\columnwidth]{" + f["file"] + "}",
+        r"\caption{" + esc(f["caption"]) + "}",
+        r"\label{fig:scores}", r"\end{figure}",
+    ])
+
+
 def table_tex():
     t = content.TABLE
     out = [r"\begin{table}[t]", r"\caption{" + esc(t["caption"]) + "}",
@@ -69,6 +79,8 @@ def render():
         out.append(r"\section{" + esc(title) + "}")
         if title == "Results":
             out.append(table_tex())
+            out.append("")
+            out.append(figure_tex())
             out.append("")
         for p in paras:
             out.append(body(p))

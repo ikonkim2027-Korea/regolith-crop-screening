@@ -76,7 +76,14 @@ The index combines the two. Where a simulant has a measured pH, the score is 0.4
 \end{tabular}
 \end{table}
 
-The index runs over the 23 simulants with a measured cohesion, listed in Table I. Each gets a score in [0, 1], where 0 is friendliest to plants and 1 is riskiest. The scores are not evenly spread: most simulants sit below about 0.5 and only a handful reach the risky end, so the ranking is about picking out the few problem soils rather than splitting a smooth gradient. At the friendly end are LSS-ISAC-1 (0.00), EAC-1A (0.00), and MLS-1 (0.02), with LHS-1 (0.07) close behind. At the risky end IGG-01 and NAO-1 reach 1.00, with OB-1A (0.79) and PolyU-1 (0.71) just below; NAO-1 carries the very high measured cohesion and was always going to land here.
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{fig_scores.png}
+\caption{Distribution of screening scores across the 23 simulants. Most sit at the low, plant-friendly end, with only a few reaching the risky end.}
+\label{fig:scores}
+\end{figure}
+
+The index runs over the 23 simulants with a measured cohesion, listed in Table I. Each gets a score in [0, 1], where 0 is friendliest to plants and 1 is riskiest. The scores are not evenly spread (Fig. 1): most simulants sit below about 0.5 and only a handful reach the risky end, so the ranking is about picking out the few problem soils rather than splitting a smooth gradient. At the friendly end are LSS-ISAC-1 (0.00), EAC-1A (0.00), and MLS-1 (0.02), with LHS-1 (0.07) close behind. At the risky end IGG-01 and NAO-1 reach 1.00, with OB-1A (0.79) and PolyU-1 (0.71) just below; NAO-1 carries the very high measured cohesion and was always going to land here.
 
 JSC-1A is the informative case, as the only simulant in the table with a published pH and therefore the only score carrying the chemistry term. Its compaction alone is low (0.08), but the high pH raises the chemistry stress and the combined score reaches 0.63, moving it into the risky half. This matches the plant studies, and shows how much one row can move once its pH is known.
 
