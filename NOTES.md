@@ -165,3 +165,13 @@ things i am not happy about and want to be upfront on:
   figure by eye, they are not exact numbers from the text (noted in PROVENANCE)
 none of these are arithmetic errors, the sums are right, they are honesty limits
 on how far the index can be pushed
+
+## what i decided to put in the paper
+- the pH extrapolation (JSC-1A at 9.6, past my 4.7-7.0 range) goes in the method,
+  it is the biggest weak spot so it has to be stated
+- fixed the robustness line: it said the "whole index" rebuilds but it only
+  rebuilds the compaction ranking, so i corrected that and added that the jitter
+  test never touches JSC-1A's chemistry row
+- left the mixed-formula point out of the paper, it already says twice that the
+  ranking is basically compaction and that the two sides are not equal weight,
+  repeating it a third time just clutters five pages
