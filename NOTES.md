@@ -142,3 +142,26 @@
 - one annoyance: rebuilding icdm.docx changes the file every time even with no
   content change (word writes a new timestamp), so i don't recommit it unless
   the actual text changed
+
+## checking the science and the math, not just that it runs
+went through the numbers on purpose this time, recomputed them by hand and
+against the source files:
+- calibration re-fits to slope 0.351, intercept -1.675, R2 0.975, same as before
+- every compaction value rebuilds exactly to what is in index.csv, so no silent
+  bug in the scoring
+- double-checked that only JSC-1A has a pH among the 23, the other simulants
+  with published pH (Mars-1A, CI) are not in the cohesion set, so the "1 of 23"
+  line is honest
+things i am not happy about and want to be upfront on:
+- JSC-1A's pH is 9.6 but my calibration only covers pH 4.7 to 7.0. so the
+  chemistry term for that one row extrapolates 2.6 pH units past the data and
+  just pins at the 1.0 ceiling. that is the weakest point in the whole index and
+  the paper should say so, not just mention the four points
+- the score for JSC-1A uses 0.4*compaction + 0.6*chem while the other 22 use
+  compaction alone, so it is not strictly the same scale across rows
+- the jitter test only shuffles the compaction ranking, so it never actually
+  tests JSC-1A's chem-driven position, which is the one place chemistry matters
+- two of the four calibration biomass points (74 and 55 mg) i read off Russell's
+  figure by eye, they are not exact numbers from the text (noted in PROVENANCE)
+none of these are arithmetic errors, the sums are right, they are honesty limits
+on how far the index can be pushed
