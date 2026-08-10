@@ -126,3 +126,19 @@
 - wired it into content.py like the table so both renderers pick it up, latex
   with includegraphics and word with add_picture
 - table and figure now sit together in the results column, still 3 pages
+
+## went back and tested the whole thing
+- wrote check.sh and ran everything top to bottom, it all still works
+- numbers i re-confirmed against the paper:
+  - calibration R2 vs pH 0.975, and CEC 0.964, n = 4
+  - index: friendliest LSS-ISAC-1 / EAC-1A / MLS-1, riskiest OB-1A / IGG-01 / NAO-1
+  - only 1 of 23 simulants has a measured pH, so still compaction-led
+  - validate: JSC-1A rank 19/23, LHS-1 rank 7/23, both match the studies
+  - robustness: top 3 stay 77.9%, bottom 3 66.8%, kendall tau 0.95
+    (paper rounds these to "about 78" and "about 67", fine)
+  - both tests pass
+- found a small thing: calibrate printed "0.351*pH + -1.675", fixed the sign so
+  it reads "- 1.675" like the paper does
+- one annoyance: rebuilding icdm.docx changes the file every time even with no
+  content change (word writes a new timestamp), so i don't recommit it unless
+  the actual text changed
