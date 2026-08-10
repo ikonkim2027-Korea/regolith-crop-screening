@@ -118,3 +118,11 @@
   tabular, the word one fought me: the rank column kept autofitting to zero width
   until i forced a fixed table layout with an explicit grid
 - still 3 pages after adding it, under the 5 page limit
+
+## added a figure too
+- the table lists the scores but you can't see the shape from it, so i added a
+  histogram (make_fig.py -> fig_scores.png) that shows most simulants clump at
+  the low end and only a couple hit the top
+- wired it into content.py like the table so both renderers pick it up, latex
+  with includegraphics and word with add_picture
+- table and figure now sit together in the results column, still 3 pages

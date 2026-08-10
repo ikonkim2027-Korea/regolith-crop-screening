@@ -7,6 +7,7 @@ proceedings look (US Letter, two column, 10pt Times).
 read it so the LaTeX and Word versions never drift apart:
 
 ```
+python make_fig.py   # -> fig_scores.png  (the score distribution)
 python to_tex.py     # -> icdm.tex   (IEEEtran, compile on Overleaf)
 python to_docx.py    # -> icdm.docx  (python-docx, opens in Word)
 ```
@@ -27,4 +28,3 @@ builds in one pass without bibtex. The Word version needs `python-docx`.
 
 - fill in my email in the author block
 - double-check the reference details (volumes, DOIs) against the originals
-- maybe a small figure of the score distribution if it fits the page budget
