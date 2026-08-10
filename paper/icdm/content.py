@@ -152,7 +152,8 @@ SECTIONS = [
         "The index runs over the 23 simulants with a measured cohesion, listed in "
         "Table I. Each gets a score in [0, 1], where 0 is friendliest to plants "
         "and 1 is riskiest. "
-        "The scores are not evenly spread: most simulants sit below about 0.5 and "
+        "The scores are not evenly spread (Fig. 1): most simulants sit below "
+        "about 0.5 and "
         "only a handful reach the risky end, so the ranking is about picking out "
         "the few problem soils rather than splitting a smooth gradient. At the "
         "friendly end are LSS-ISAC-1 (0.00), EAC-1A (0.00), and MLS-1 (0.02), with "
@@ -226,6 +227,14 @@ SECTIONS = [
         "likely trouble soils before anyone plants a seed is already useful.",
     ]),
 ]
+
+# the score distribution figure, rendered into the Results section.
+FIGURE = {
+    "file": "fig_scores.png",
+    "caption": "Distribution of screening scores across the 23 simulants. Most "
+               "sit at the low, plant-friendly end, with only a few reaching the "
+               "risky end.",
+}
 
 # the ranking table. rendered into the Results section by both renderers.
 TABLE = {
