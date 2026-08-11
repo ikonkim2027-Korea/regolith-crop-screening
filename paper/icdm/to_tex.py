@@ -59,7 +59,7 @@ def table_tex():
 def render():
     a = content.AUTHOR
     out = []
-    out.append(r"\documentclass[conference]{IEEEtran}")
+    out.append(r"\documentclass[conference,letterpaper,10pt]{IEEEtran}")
     out.append(r"\usepackage{cite}")
     out.append(r"\usepackage{amsmath,amssymb}")
     out.append(r"\usepackage{graphicx}")
