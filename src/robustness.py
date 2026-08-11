@@ -2,20 +2,14 @@ import numpy as np
 import pandas as pd
 from scipy.stats import kendalltau
 from harmonize import parse_num, RAW
+from scoring import compaction_risk
 
 sim = pd.read_csv(RAW / "gasteiner" / "Dataset_Simulants.csv")
 sim["cohesion"] = sim["Cohesion (kPa)"].map(parse_num)
 sim = sim.dropna(subset=["cohesion"]).reset_index(drop=True)
 names = sim["Simulant"].to_numpy()
 
-
-# TODO: this risk calc is copy-pasted from index.py, should pull it into one place
-def risk_of(cvals):
-    c = np.clip(cvals, None, np.quantile(cvals, 0.95))
-    return (c - c.min()) / (c.max() - c.min())
-
-
-base_risk = risk_of(sim["cohesion"].to_numpy())
+base_risk = compaction_risk(sim["cohesion"].to_numpy())
 base = names[np.argsort(base_risk)]
 top3, bot3 = set(base[:3]), set(base[-3:])
 
@@ -26,7 +20,7 @@ N = 2000
 th = tb = 0
 taus = []
 for _ in range(N):
-    noisy = risk_of(sim["cohesion"].to_numpy() * (1 + rng.uniform(-0.2, 0.2, len(sim))))
+    noisy = compaction_risk(sim["cohesion"].to_numpy() * (1 + rng.uniform(-0.2, 0.2, len(sim))))
     order = names[np.argsort(noisy)]
     th += set(order[:3]) == top3
     tb += set(order[-3:]) == bot3
