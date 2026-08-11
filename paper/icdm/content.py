@@ -12,8 +12,9 @@ TITLE = ("From Soil Mechanics to Crop Stress: Screening Regolith Simulants "
 # affiliation line, so it goes here.
 AUTHOR = {
     "name": "Ikon Kim",
-    "affiliation": ["High School Student", "St. Mark's School"],
-    "email": "",  # fill in before submitting
+    "affiliation": ["High School Student", "St. Mark's School",
+                    "ikonkim2027@gmail.com"],
+    "email": "ikonkim2027@gmail.com",
 }
 
 ABSTRACT = (
