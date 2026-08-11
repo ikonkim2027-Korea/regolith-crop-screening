@@ -17,8 +17,9 @@ import content
 HERE = Path(__file__).resolve().parent
 
 
-def set_cols(section, num=2, space_twips=288):
-    """turn a section into num columns. IEEE uses two, ~0.2in apart."""
+def set_cols(section, num=2, space_twips=450):
+    """turn a section into num columns. the IEEE CS format uses two with a
+    5/16 inch (0.3125 in = 450 twips) gap between them."""
     sectPr = section._sectPr
     cols = sectPr.find(qn("w:cols"))
     if cols is None:
@@ -29,9 +30,11 @@ def set_cols(section, num=2, space_twips=288):
 
 
 def page_setup(section):
+    # IEEE Computer Society 8.5x11 proceedings: print area 6.875 x 8.875 in,
+    # which works out to these margins.
     section.page_width, section.page_height = Inches(8.5), Inches(11)
-    section.top_margin, section.bottom_margin = Inches(0.75), Inches(1.0)
-    section.left_margin, section.right_margin = Inches(0.625), Inches(0.625)
+    section.top_margin, section.bottom_margin = Inches(1.0), Inches(1.125)
+    section.left_margin, section.right_margin = Inches(0.8125), Inches(0.8125)
 
 # {key} citations become [n] in order of the reference list
 NUM = {k: i + 1 for i, (k, _) in enumerate(content.REFERENCES)}
@@ -124,7 +127,7 @@ def render():
     t.alignment = WD_ALIGN_PARAGRAPH.CENTER
     r = t.add_run(content.TITLE)
     r.bold = True
-    r.font.size = Pt(18)
+    r.font.size = Pt(24)
 
     # author with the required high-school affiliation
     a = content.AUTHOR
