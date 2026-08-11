@@ -286,8 +286,10 @@ TABLE = {
 # double-check volumes/DOIs against the originals before submitting.
 REFERENCES = [
     ("russell",
-     "R. Russell et al., \"Testing CI asteroid regolith simulant as a plant "
-     "growth medium,\" Planetary Science Journal, vol. 3, no. 7, art. 155, 2022."),
+     "S. J. Russell, S. K. Fieber-Beyer, and K. A. Yurkonis, \"CI asteroid "
+     "regolith as an in situ plant growth medium for space crop production,\" "
+     "Planetary Science Journal, vol. 3, no. 7, art. 155, 2022, "
+     "doi:10.3847/PSJ/ac74c9."),
     ("gasteiner",
      "L. Gasteiner, N. Murdoch, and A. D'Angelo, \"An open database of lunar "
      "regolith and simulant mechanical properties,\" arXiv:2602.03829, 2026."),
@@ -302,9 +304,9 @@ REFERENCES = [
      "A. Eichler et al., \"Challenging the agricultural viability of Martian "
      "regolith simulants,\" Icarus, vol. 354, art. 114022, 2021."),
     ("duri",
-     "L. G. Duri et al., \"The potential of regolith simulants as agricultural "
-     "substrates,\" Frontiers in Astronomy and Space Sciences, vol. 8, art. "
-     "747821, 2022."),
+     "L. G. Duri et al., \"The potential for lunar and Martian regolith "
+     "simulants to sustain plant growth: a multidisciplinary overview,\" "
+     "Frontiers in Astronomy and Space Sciences, vol. 8, art. 747821, 2022."),
     ("dotson",
      "J. Dotson et al., \"Cohesion and bulk density relationships for compacted "
      "regolith,\" Icarus, vol. 411, art. 115943, 2024."),
