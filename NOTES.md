@@ -175,3 +175,11 @@ on how far the index can be pushed
 - left the mixed-formula point out of the paper, it already says twice that the
   ranking is basically compaction and that the two sides are not equal weight,
   repeating it a third time just clutters five pages
+
+## cleanup and the last paper bits
+- robustness.py had a note-to-self that its risk calc was copy-pasted from
+  index.py, so i pulled it into scoring.py and had both import it. checked
+  index.csv rebuilds identical and the robustness numbers did not budge
+- added an acknowledgment and a short data-and-code line pointing at this repo,
+  since the whole point of the paper is that it runs on public data
+- still 3 pages
