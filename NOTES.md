@@ -211,3 +211,23 @@ on how far the index can be pushed
   value (NAO-1) needs the 95th-percentile cap, IGG-01 sits just over it too
 - confirms the thin spots i already knew about: 1 of 23 with a pH, 2 growth
   results to validate against, 2 of 4 calibration points read off a figure
+
+## tried to widen the chemistry side, and a sensitivity check
+the obvious next step was to get pH for more than one simulant, so i went looking:
+- the Duri review actually says the pH and EC of simulants are not in the
+  planetary simulant database, and the Exolith spec pages for LHS-1 and LMS-1
+  do not list a pH either. so the reason the chemistry only covers one row is
+  that published pH for these simulants barely exists, not that i skipped it.
+  wrote that into the paper honestly instead of pretending it is easy to fix
+since i could not widen chemistry, i checked the physical side instead. the
+database also has friction angle and bulk density, so property_sensitivity.py
+asks whether the ranking would come out the same from those:
+- cohesion vs friction angle: spearman -0.23 (p 0.30)
+- cohesion vs bulk density: spearman +0.07 (p 0.76)
+- if i rank by density instead of cohesion, only 2 of the friendliest 5 and 2 of
+  the riskiest 5 stay the same
+so the three mechanical properties basically do not agree, same heterogeneity
+that killed the random forest. that means the score is a cohesion ranking
+specifically, not a general strength ranking. i keep cohesion because Russell
+tied crusting to it, but i can't pretend another property would give the same
+answer, so that went into the discussion too
