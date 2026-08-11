@@ -198,3 +198,16 @@ on how far the index can be pushed
     Earth, the Moon, and Mars", it is an ESSD preprint essd-2026-206
   - eichler, wamelink, doan, gundersen were already right
 - the fixed references run a bit longer so the paper is 4 pages now, still under 5
+
+## profiled the raw data
+- put a small data_check.py under analysis/ that just describes the inputs and
+  writes the numbers to data_report.md, so i can see the state of the data at a
+  glance instead of trusting it blindly
+- what it turned up: the simulant table has 24 rows but only 23 carry a cohesion
+  value, so one gets dropped, and only 20 of the 24 list a bulk density
+- no duplicate simulant names, and every name in index.csv traces back to the
+  source table, so nothing is invented downstream
+- cohesion runs 0.34 to 95.3 kPa with a median of 5.0, which is why one big
+  value (NAO-1) needs the 95th-percentile cap, IGG-01 sits just over it too
+- confirms the thin spots i already knew about: 1 of 23 with a pH, 2 growth
+  results to validate against, 2 of 4 calibration points read off a figure
