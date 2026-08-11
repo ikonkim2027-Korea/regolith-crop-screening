@@ -26,6 +26,4 @@ builds in one pass without bibtex. The Word version needs `python-docx`.
 
 ## still to do before submitting
 
-- fill in my email in the author block
-- double-check the reference details (volumes, DOIs) against the originals
 - confirm the name in the acknowledgment reads right

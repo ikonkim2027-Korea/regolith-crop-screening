@@ -183,3 +183,18 @@ on how far the index can be pushed
 - added an acknowledgment and a short data-and-code line pointing at this repo,
   since the whole point of the paper is that it runs on public data
 - still 3 pages
+
+## went back over the references properly
+- added my email to the author line
+- checked every reference against the real paper this time, not from memory:
+  - russell: i had the wrong title and even the wrong first initial (it is
+    S. J. Russell, not R.), the real title is "CI Asteroid Regolith as an In
+    Situ Plant Growth Medium for Space Crop Production", added the doi
+  - dotson: wrong initial (B. not J.) and a made-up title, the real one is
+    "Cohesion and shear strength of compacted lunar and Martian regolith
+    simulants", Icarus 411 checks out
+  - duri and gasteiner titles were loose paraphrases, fixed to the real ones
+  - planetgsd: real title is "A global dataset of grain-size distributions from
+    Earth, the Moon, and Mars", it is an ESSD preprint essd-2026-206
+  - eichler, wamelink, doan, gundersen were already right
+- the fixed references run a bit longer so the paper is 4 pages now, still under 5
