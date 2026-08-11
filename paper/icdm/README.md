@@ -24,6 +24,23 @@ builds in one pass without bibtex. The Word version needs `python-docx`.
 - the first author affiliation has to say "High School Student" (it does)
 - deadline is 20 August 2026
 
+## formatting, checked against the IEEE CS 8.5x11 guidelines
+
+the docx follows the measured numbers from the guidelines:
+
+- page: US Letter, 8.5 x 11 in
+- print area: 6.875 in wide (matches the spec exactly)
+- margins: top 1.0 in, bottom 1.125 in, left and right 0.8125 in
+- two columns with a 5/16 in (0.3125 in) gap
+- body: 10pt Times New Roman, single spaced, fully justified
+- title 24pt, abstract and index terms 9pt, section headings 10pt roman numerals
+- no page numbers or running header/footer, same as the IEEE template
+
+the latex version uses the standard IEEEtran conference class (letterpaper, 10pt),
+which is the accepted IEEE format; i did not override its geometry because the
+class is meant to be used as is. so the two files are laid out by their own
+templates and both come out to 4 pages, under the 5 page limit.
+
 ## still to do before submitting
 
 - confirm the name in the acknowledgment reads right

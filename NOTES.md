@@ -231,3 +231,16 @@ that killed the random forest. that means the score is a cohesion ranking
 specifically, not a general strength ranking. i keep cohesion because Russell
 tied crusting to it, but i can't pretend another property would give the same
 answer, so that went into the discussion too
+
+## went through the formatting rules properly
+pulled the actual IEEE computer society 8.5x11 numbers and checked my docx
+against them, and my margins were wrong. i had been using the generic ieee
+conference values (0.75 top, 0.625 sides), but the CS guidelines give a
+6.875 in print area, which works out to top 1.0, bottom 1.125, sides 0.8125,
+and a 5/16 in column gap. fixed all of those, and bumped the title from 18 to
+24pt to match. body was already 10pt times single spaced justified, and there
+are no page numbers, which is what the template wants.
+- for the latex i left IEEEtran conference alone since you are supposed to use
+  the class as is, just pinned letterpaper and 10pt so it can never come out A4
+- wrote the checked numbers into the paper readme so i do not have to re-derive
+  them later
