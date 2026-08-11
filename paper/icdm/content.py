@@ -213,11 +213,16 @@ SECTIONS = [
         "points from one study, so the pH-to-stress line is a rough guide. Only "
         "one ranked simulant has a published pH, so the chemistry term hardly "
         "touches the ranking. The cohesion values come from very different tests, "
-        "which is exactly why the random forest could not fit them. And the plant "
-        "check covers only two soils. None of these break the screen, but they set "
-        "a ceiling on how much weight the exact scores can carry. The clearest "
-        "next step is more pH and CEC values, so the chemistry side does real work "
-        "across the table rather than on a single row.",
+        "which is exactly why the random forest could not fit them. That same "
+        "spread shows up across properties: cohesion, friction angle, and bulk "
+        "density barely correlate here (Spearman near zero), so ranking by another "
+        "mechanical property would not reproduce this order. The score reflects "
+        "cohesion specifically, the property Russell tied to crusting, rather than "
+        "a general strength axis. And the plant check covers only two soils. None "
+        "of these break the screen, but they set a ceiling on how much weight the "
+        "exact scores can carry. The clearest next step is more pH and CEC values, "
+        "though published measurements for these simulants are scarce, so filling "
+        "that column may mean measuring them rather than mining papers.",
     ]),
     ("Conclusion", [
         "This work asked whether public soil data alone can flag which regolith "
