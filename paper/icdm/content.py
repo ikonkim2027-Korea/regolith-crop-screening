@@ -229,6 +229,16 @@ SECTIONS = [
         "positive screen. For a first pass at a hard problem, pointing at the "
         "likely trouble soils before anyone plants a seed is already useful.",
     ]),
+    ("Acknowledgment", [
+        "The author thanks Seo Ho Song for guidance, and the teams behind the "
+        "Gasteiner database, PlanetGSD, and the OSD-670 study for making their "
+        "measurements public.",
+    ]),
+    ("Data and Code Availability", [
+        "Every input used here is public and cited above. The code that cleans "
+        "the data, builds the score, and runs the checks is available at "
+        "github.com/ikonkim2027-Korea/regolith-crop-screening.",
+    ]),
 ]
 
 # the score distribution figure, rendered into the Results section.
