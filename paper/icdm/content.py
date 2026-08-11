@@ -291,11 +291,11 @@ REFERENCES = [
      "Planetary Science Journal, vol. 3, no. 7, art. 155, 2022, "
      "doi:10.3847/PSJ/ac74c9."),
     ("gasteiner",
-     "L. Gasteiner, N. Murdoch, and A. D'Angelo, \"An open database of lunar "
-     "regolith and simulant mechanical properties,\" arXiv:2602.03829, 2026."),
+     "L. Gasteiner, N. Murdoch, et al., \"An open database of lunar regolith "
+     "and simulants properties,\" arXiv:2602.03829, 2026."),
     ("planetgsd",
-     "PlanetGSD 1.0: a global grain-size database for planetary surfaces, Earth "
-     "System Science Data, 2026."),
+     "A global dataset of grain-size distributions from Earth, the Moon, and "
+     "Mars, Earth System Science Data, preprint essd-2026-206, 2026."),
     ("wamelink",
      "G. W. W. Wamelink et al., \"Can plants grow on Mars and the Moon: a growth "
      "experiment on Mars and Moon soil simulants,\" PLOS ONE, vol. 9, no. 8, "
@@ -308,8 +308,8 @@ REFERENCES = [
      "simulants to sustain plant growth: a multidisciplinary overview,\" "
      "Frontiers in Astronomy and Space Sciences, vol. 8, art. 747821, 2022."),
     ("dotson",
-     "J. Dotson et al., \"Cohesion and bulk density relationships for compacted "
-     "regolith,\" Icarus, vol. 411, art. 115943, 2024."),
+     "B. Dotson et al., \"Cohesion and shear strength of compacted lunar and "
+     "Martian regolith simulants,\" Icarus, vol. 411, art. 115943, 2024."),
     ("doan",
      "A. Doan, A. Halevy, and Z. Ives, Principles of Data Integration. Morgan "
      "Kaufmann, 2012."),
