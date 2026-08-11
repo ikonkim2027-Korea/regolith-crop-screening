@@ -5,7 +5,7 @@
 \begin{document}
 \title{From Soil Mechanics to Crop Stress: Screening Regolith Simulants for Plant Suitability from Public Soil Data}
 \author{\IEEEauthorblockN{Ikon Kim}
-\IEEEauthorblockA{High School Student\\St. Mark's School}}
+\IEEEauthorblockA{High School Student\\St. Mark's School\\ikonkim2027@gmail.com}}
 \maketitle
 \begin{abstract}
 Growing crops on the Moon or Mars means growing them in regolith, and testing whether plants tolerate a given simulant takes a multi-week growth trial, so only a few of the many published simulants have been tested. This work asks whether public soil measurements alone can screen simulants for how hard they are on plants, before any trial. Three public datasets, engineering properties, grain size, and plant results, are joined into one table keyed by simulant. A random forest that tries to predict cohesion from the other properties fails under mission-grouped cross validation (R2 below zero); this negative result is reported because it reflects how noisy the pooled cohesion data is. In its place a screening score is built from measured cohesion and a small pH-to-stress calibration, and 23 simulants are ranked from friendliest to riskiest. The ranking agrees with the two simulants that have published growth results, and a jitter test shows the friendly and risky ends are stable while the middle is not. The result is a reproducible screen that flags likely problem soils from data that already exists.
@@ -108,13 +108,13 @@ The author thanks Seo Ho Song for guidance, and the teams behind the Gasteiner d
 Every input used here is public and cited above. The code that cleans the data, builds the score, and runs the checks is available at github.com/ikonkim2027-Korea/regolith-crop-screening.
 
 \begin{thebibliography}{9}
-\bibitem{russell} R. Russell et al., "Testing CI asteroid regolith simulant as a plant growth medium," Planetary Science Journal, vol. 3, no. 7, art. 155, 2022.
-\bibitem{gasteiner} L. Gasteiner, N. Murdoch, and A. D'Angelo, "An open database of lunar regolith and simulant mechanical properties," arXiv:2602.03829, 2026.
-\bibitem{planetgsd} PlanetGSD 1.0: a global grain-size database for planetary surfaces, Earth System Science Data, 2026.
+\bibitem{russell} S. J. Russell, S. K. Fieber-Beyer, and K. A. Yurkonis, "CI asteroid regolith as an in situ plant growth medium for space crop production," Planetary Science Journal, vol. 3, no. 7, art. 155, 2022, doi:10.3847/PSJ/ac74c9.
+\bibitem{gasteiner} L. Gasteiner, N. Murdoch, et al., "An open database of lunar regolith and simulants properties," arXiv:2602.03829, 2026.
+\bibitem{planetgsd} A global dataset of grain-size distributions from Earth, the Moon, and Mars, Earth System Science Data, preprint essd-2026-206, 2026.
 \bibitem{wamelink} G. W. W. Wamelink et al., "Can plants grow on Mars and the Moon: a growth experiment on Mars and Moon soil simulants," PLOS ONE, vol. 9, no. 8, e103138, 2014.
 \bibitem{eichler} A. Eichler et al., "Challenging the agricultural viability of Martian regolith simulants," Icarus, vol. 354, art. 114022, 2021.
-\bibitem{duri} L. G. Duri et al., "The potential of regolith simulants as agricultural substrates," Frontiers in Astronomy and Space Sciences, vol. 8, art. 747821, 2022.
-\bibitem{dotson} J. Dotson et al., "Cohesion and bulk density relationships for compacted regolith," Icarus, vol. 411, art. 115943, 2024.
+\bibitem{duri} L. G. Duri et al., "The potential for lunar and Martian regolith simulants to sustain plant growth: a multidisciplinary overview," Frontiers in Astronomy and Space Sciences, vol. 8, art. 747821, 2022.
+\bibitem{dotson} B. Dotson et al., "Cohesion and shear strength of compacted lunar and Martian regolith simulants," Icarus, vol. 411, art. 115943, 2024.
 \bibitem{doan} A. Doan, A. Halevy, and Z. Ives, Principles of Data Integration. Morgan Kaufmann, 2012.
 \bibitem{gundersen} O. E. Gundersen and S. Kjensmo, "State of the art: reproducibility in artificial intelligence," in Proc. AAAI, 2018.
 \end{thebibliography}
