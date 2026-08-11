@@ -1,13 +1,13 @@
 import numpy as np
 import pandas as pd
 from harmonize import parse_num, RAW, ROOT, PROC
+from scoring import compaction_risk
 
 # compaction risk from measured cohesion
 sim = pd.read_csv(RAW / "gasteiner" / "Dataset_Simulants.csv")
 sim["cohesion"] = sim["Cohesion (kPa)"].map(parse_num)
 sim = sim.dropna(subset=["cohesion"]).copy()
-c = sim["cohesion"].clip(upper=sim["cohesion"].quantile(0.95))
-sim["compaction"] = (c - c.min()) / (c.max() - c.min())
+sim["compaction"] = compaction_risk(sim["cohesion"].to_numpy())
 
 # chemistry stress from the pH calibration (numbers from calibrate.py)
 ph = pd.read_csv(ROOT / "data" / "sim_ph.csv")
