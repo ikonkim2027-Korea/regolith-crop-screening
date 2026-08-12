@@ -244,3 +244,20 @@ are no page numbers, which is what the template wants.
   the class as is, just pinned letterpaper and 10pt so it can never come out A4
 - wrote the checked numbers into the paper readme so i do not have to re-derive
   them later
+
+## tried to strengthen the validation, and it changed how i frame the whole thing
+the weakest part of the paper is that i only validate against two simulants, so i
+went looking for more published growth results to widen it. what i found instead:
+- a 2026 systematic review (Kamouh) went through 25 cultivation studies and the
+  consistent result is that unamended simulants nearly all grow plants poorly,
+  and the limiting factor is usually chemistry (alkaline pH, low nutrients), not
+  the physical structure
+- so growth outcomes are basically all "bad" and driven by chemistry, which means
+  i cannot use them to validate a cohesion/crusting ranking. more points would
+  not have helped, they would have muddied it
+this actually gave me a better story than the one i had. chemistry gets fixed with
+amendments, but crusting is physical and stays, so a crusting screen targets the
+part amendments do not fix. i put that into the results and sharpened the abstract
+to call the output a crusting-risk screen instead of a vague "problem soil" screen.
+kept the honest two-point check, just stopped pretending more growth data was the
+fix.
