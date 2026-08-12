@@ -261,3 +261,14 @@ part amendments do not fix. i put that into the results and sharpened the abstra
 to call the output a crusting-risk screen instead of a vague "problem soil" screen.
 kept the honest two-point check, just stopped pretending more growth data was the
 fix.
+
+## checked the code and the formulas hold
+went over the math one more time and pinned it in a test so it cannot drift:
+- the calibration re-fits to slope 0.351, intercept -1.675, R2 0.975
+- the compaction cap sends the min to 0 and anything past the 95th percentile
+  to 1, and stays inside [0, 1]
+- the chemistry term clips right: JSC-1A at pH 9.6 hits 1.0, a low pH floors at 0
+- the combined score is 0.4*compaction + 0.6*chem where a pH exists and plain
+  compaction where it does not (JSC-1A comes out 0.634)
+ran check.sh top to bottom, everything passes and index.csv rebuilds
+byte-for-byte the same, so the pipeline is reproducible
