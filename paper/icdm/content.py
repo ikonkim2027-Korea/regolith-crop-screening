@@ -244,7 +244,7 @@ SECTIONS = [
         "likely trouble soils before anyone plants a seed is already useful.",
     ]),
     ("Acknowledgment", [
-        "The author thanks Seo Ho Song for guidance, and the teams behind the "
+        "The author thanks Dr. Seo Ho Song for guidance, and the teams behind the "
         "Gasteiner database, PlanetGSD, and the OSD-670 study for making their "
         "measurements public.",
     ]),

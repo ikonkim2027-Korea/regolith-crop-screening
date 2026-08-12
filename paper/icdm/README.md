@@ -43,5 +43,4 @@ templates and both come out to 4 pages, under the 5 page limit.
 
 ## still to do before submitting
 
-- confirm the name in the acknowledgment reads right
 - confirm the Kamouh review volume and page once it is out of early access
