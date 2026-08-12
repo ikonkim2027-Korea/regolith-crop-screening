@@ -50,10 +50,42 @@ def cite_sub(text):
     return re.sub(r"(\{[a-z]+\})+", repl, text)
 
 
+URL_RE = re.compile(r"(github\.com/[^\s.,;]+)")
+
+
+def add_hyperlink(paragraph, url, text, size):
+    """add a real clickable external hyperlink run to a paragraph."""
+    r_id = paragraph.part.relate_to(
+        url,
+        "http://schemas.openxmlformats.org/officeDocument/2006/relationships/"
+        "hyperlink",
+        is_external=True,
+    )
+    link = OxmlElement("w:hyperlink")
+    link.set(qn("r:id"), r_id)
+    run = OxmlElement("w:r")
+    rpr = OxmlElement("w:rPr")
+    color = OxmlElement("w:color"); color.set(qn("w:val"), "0563C1")
+    under = OxmlElement("w:u"); under.set(qn("w:val"), "single")
+    szel = OxmlElement("w:sz"); szel.set(qn("w:val"), str(int(size * 2)))
+    fonts = OxmlElement("w:rFonts")
+    fonts.set(qn("w:ascii"), "Times New Roman")
+    fonts.set(qn("w:hAnsi"), "Times New Roman")
+    for el in (fonts, color, under, szel):
+        rpr.append(el)
+    run.append(rpr)
+    txt = OxmlElement("w:t"); txt.text = text; run.append(txt)
+    link.append(run)
+    paragraph._p.append(link)
+
+
 def add_body(doc, text, size=10, justify=True):
     p = doc.add_paragraph()
-    run = p.add_run(cite_sub(text))
-    run.font.size = Pt(size)
+    for part in URL_RE.split(cite_sub(text)):
+        if URL_RE.fullmatch(part):
+            add_hyperlink(p, "https://" + part, part, size)
+        elif part:
+            p.add_run(part).font.size = Pt(size)
     if justify:
         p.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
     p.paragraph_format.space_after = Pt(0)

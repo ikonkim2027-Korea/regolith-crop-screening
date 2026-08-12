@@ -30,7 +30,12 @@ def _merge_cite(m):
 
 
 def body(text):
-    return cites(esc(text))
+    out = cites(esc(text))
+    # make the repo link clickable
+    out = out.replace(
+        "github.com/ikonkim2027-Korea/regolith-crop-screening",
+        r"\url{https://github.com/ikonkim2027-Korea/regolith-crop-screening}")
+    return out
 
 
 def figure_tex():
@@ -63,6 +68,7 @@ def render():
     out.append(r"\usepackage{cite}")
     out.append(r"\usepackage{amsmath,amssymb}")
     out.append(r"\usepackage{graphicx}")
+    out.append(r"\usepackage[hidelinks]{hyperref}")
     out.append(r"\begin{document}")
     out.append(r"\title{" + esc(content.TITLE) + "}")
     aff = r"\\".join(esc(x) for x in a["affiliation"])
