@@ -43,4 +43,5 @@ templates and both come out to 4 pages, under the 5 page limit.
 
 ## still to do before submitting
 
-- confirm the Kamouh review volume and page once it is out of early access
+- the Kamouh review is still in press, so it has no volume or page yet; update
+  the citation once those are assigned

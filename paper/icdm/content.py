@@ -330,8 +330,8 @@ REFERENCES = [
      "O. E. Gundersen and S. Kjensmo, \"State of the art: reproducibility in "
      "artificial intelligence,\" in Proc. AAAI, 2018."),
     ("kamouh",
-     "A. Kamouh, D. Chami, A. A. Abdelmouneim, R. Khadra, and S. De Pascale, "
-     "\"A systematic review of plant cultivation and growth in extraterrestrial "
-     "regolith simulants,\" Life Sciences in Space Research, 2026, "
-     "doi:10.1016/j.lssr.2026.04.005."),
+     "A. El Kamouh, D. El Chami, A. A. Abdelmouneim, R. Khadra, and S. De "
+     "Pascale, \"A systematic review of plant cultivation and growth in "
+     "extraterrestrial regolith simulants,\" Life Sciences in Space Research, "
+     "2026, in press, doi:10.1016/j.lssr.2026.04.005."),
 ]
