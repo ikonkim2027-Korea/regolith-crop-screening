@@ -249,8 +249,11 @@ SECTIONS = [
         "measurements public.",
     ]),
     ("Data and Code Availability", [
-        "Every input used here is public and cited above. The code that cleans "
-        "the data, builds the score, and runs the checks is available at "
+        "Every input here is public and cited above; nothing was measured for "
+        "this study. The pipeline is version-controlled and tested, and every "
+        "number, table, and figure in this paper regenerates from a single "
+        "script, including the model that failed and the checks that flag the "
+        "weak spots. The full history is at "
         "github.com/ikonkim2027-Korea/regolith-crop-screening.",
     ]),
 ]
