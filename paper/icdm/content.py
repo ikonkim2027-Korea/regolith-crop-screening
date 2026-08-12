@@ -179,6 +179,14 @@ SECTIONS = [
         "a sanity check, not a validation, but it is reassuring that the ranking "
         "does not point the wrong way.",
 
+        "Chasing more growth results would not sharpen this much. A recent "
+        "systematic review of cultivation studies reports that unamended "
+        "simulants nearly all grow plants poorly, held back mainly by their "
+        "chemistry rather than their structure {kamouh}. That is what makes a "
+        "physical screen worth building: chemistry can be corrected with "
+        "amendments, but the crusting risk this index measures is what remains "
+        "after it is.",
+
         "To test stability, every cohesion value was jittered by up to 20 percent "
         "and the compaction ranking rebuilt 2000 times. The friendliest three simulants "
         "stayed in the friendly group in about 78 percent of runs and the riskiest "
