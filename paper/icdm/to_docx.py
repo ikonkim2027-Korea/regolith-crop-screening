@@ -36,6 +36,9 @@ def page_setup(section):
     section.top_margin, section.bottom_margin = Inches(1.0), Inches(1.125)
     section.left_margin, section.right_margin = Inches(0.8125), Inches(0.8125)
 
+# sections IEEE leaves without a roman numeral
+UNNUMBERED = {"Acknowledgment", "Data and Code Availability"}
+
 # {key} citations become [n] in order of the reference list
 NUM = {k: i + 1 for i, (k, _) in enumerate(content.REFERENCES)}
 
@@ -158,12 +161,19 @@ def render():
     run.font.size = Pt(9)
     kw.add_run(", ".join(content.KEYWORDS)).font.size = Pt(9)
 
-    # sections, numbered with roman numerals
+    # sections, numbered with roman numerals. the back-matter sections
+    # (acknowledgment, availability) stay unnumbered, as IEEE does them.
     romans = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"]
-    for i, (title, paras) in enumerate(content.SECTIONS):
+    num = 0
+    for title, paras in content.SECTIONS:
         h = doc.add_paragraph()
         h.alignment = WD_ALIGN_PARAGRAPH.CENTER
-        run = h.add_run(f"{romans[i]}.  {title.upper()}")
+        if title in UNNUMBERED:
+            head = title.upper()
+        else:
+            head = f"{romans[num]}.  {title.upper()}"
+            num += 1
+        run = h.add_run(head)
         run.bold = True
         run.font.size = Pt(10)
         h.paragraph_format.space_before = Pt(6)

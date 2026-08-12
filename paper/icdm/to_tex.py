@@ -75,8 +75,10 @@ def render():
     out.append(r"\begin{IEEEkeywords}")
     out.append(esc(", ".join(content.KEYWORDS)))
     out.append(r"\end{IEEEkeywords}")
+    unnumbered = {"Acknowledgment", "Data and Code Availability"}
     for title, paras in content.SECTIONS:
-        out.append(r"\section{" + esc(title) + "}")
+        star = "*" if title in unnumbered else ""
+        out.append(r"\section" + star + "{" + esc(title) + "}")
         if title == "Results":
             out.append(table_tex())
             out.append("")
