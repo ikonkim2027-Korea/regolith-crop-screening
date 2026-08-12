@@ -13,6 +13,7 @@ cd ..
 echo "### tests"
 python3 tests/test_parse.py
 python3 tests/test_grain.py
+python3 tests/test_index_math.py
 
 echo "### paper"
 cd paper/icdm

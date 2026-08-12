@@ -45,8 +45,9 @@ One script per step under `src/`, meant to run in this order:
 6. `make_table.py` writes the clean ranked table
 
 `model.py` is the cohesion-prediction attempt that did not pan out, kept in as an
-honest negative result. `plot.py` draws the bar chart. Parsing and the grain-size
-math have their own checks in `tests/`.
+honest negative result. `plot.py` draws the bar chart. Parsing, the grain-size
+math, and the index formulas have their own checks in `tests/`; `check.sh` runs
+the whole pipeline and the tests in one go.
 
 ## data
 
