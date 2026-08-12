@@ -32,8 +32,8 @@ ABSTRACT = (
     "simulants are ranked from friendliest to riskiest. The ranking agrees with "
     "the two simulants that have published growth results, and a jitter test "
     "shows the friendly and risky ends are stable while the middle is not. The "
-    "result is a reproducible screen that flags likely problem soils from data "
-    "that already exists.")
+    "result is a reproducible screen for crusting risk, the physical failure mode "
+    "that soil amendments do not fix, built from data that already exists.")
 
 KEYWORDS = ["data integration", "screening index", "regolith simulants",
             "space agriculture", "ranking", "reproducibility"]
