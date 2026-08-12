@@ -118,6 +118,13 @@ def _fix_widths(tbl, widths_twips):
 
 def render():
     doc = Document()
+    # the default template stamps the file properties with the library name;
+    # set them to the author instead so the document reads as a normal paper.
+    cp = doc.core_properties
+    cp.author = content.AUTHOR["name"]
+    cp.last_modified_by = content.AUTHOR["name"]
+    cp.title = content.TITLE
+    cp.comments = ""
     normal = doc.styles["Normal"].font
     normal.name = "Times New Roman"
     normal.size = Pt(10)
